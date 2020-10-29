@@ -321,7 +321,7 @@ Local Repository：本机仓库的目录位置
 
 ---Build Tools---Maven---Runner
 
-VM Options：-DarchetypeCatalog=internal（Maven项目创建时，会联网下载模板文件，比较大，使用此参数配置不用下载，创建Maven项目速度快）
+VM Options：archetypeCatalog=internal（Maven项目创建时，会联网下载模板文件，比较大，使用此参数配置不用下载，创建Maven项目速度快）
 
 JRE：项目的JDK
 
@@ -332,3 +332,4 @@ JRE：项目的JDK
 ## 2、使用模板创建项目
 
 1. maven-archetype-quickstart：普通的Java项目
+2. maven-archetype-webapp：web工程
