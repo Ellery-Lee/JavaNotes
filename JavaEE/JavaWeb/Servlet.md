@@ -2,7 +2,7 @@
 
 # 一、B/S架构角色和协议
 
-![Snipaste_2020-09-25_10-38-21](D:\JavaHub\学习相关\课堂截图\Snipaste_2020-09-25_10-38-21.png)
+![Snipaste_2020-09-25_10-38-21](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-09-25_10-38-21.png)
 
 一个WebApp文件夹构成：
 
@@ -125,7 +125,7 @@ Servlet对象实例化之后，这个Servlet对象被存储到哪里了？
 
 **结论：**SUN公司为我们程序员提供了很多个不同的时刻。若在这个特殊时刻执行特殊程序，这些程序是有位置编写的。
 
-#三、UML
+# 三、UML
 
 ## 1、什么是UML
 
@@ -143,15 +143,15 @@ Servlet对象实例化之后，这个Servlet对象被存储到哪里了？
 
 - 类图：描述类的信息以及类和类之间的关系
 
-  ![image-20200915155528023](C:\Users\62356\AppData\Roaming\Typora\typora-user-images\image-20200915155528023.png)
+  ![Snipaste_2020-11-01_18-44-43](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-11-01_18-44-43.png)
 
 - 时序图：描述一个程序的执行过程
 
-  ![image-20200915155439299](C:\Users\62356\AppData\Roaming\Typora\typora-user-images\image-20200915155439299.png)
+  ![Snipaste_2020-11-01_18-46-43](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-11-01_18-46-43.png)
 
 - 用例图：站在系统用户的角度分析系统中存在哪些功能
 
-  ![image-20200915155557819](C:\Users\62356\AppData\Roaming\Typora\typora-user-images\image-20200915155557819.png)
+  ![Snipaste_2020-11-01_18-46-17](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-11-01_18-46-17.png)
 
 - 状态图：描述一个对象的生命周期
 
@@ -305,7 +305,7 @@ Servlet对象实例化之后，这个Servlet对象被存储到哪里了？
   - 局部配置：CATALINA_HOME/webapp/web.xml
   - 遵守**就近原则**，若一个页面的名称是index.html、index.htm、index.jsp，这些都是默认的欢迎页面，在全局配置中已经配置过了。
 
-#七、HTTP状态码
+# 七、HTTP状态码
 
 ## 1、webapp中常见的错误代码
 
@@ -328,7 +328,7 @@ Servlet对象实例化之后，这个Servlet对象被存储到哪里了？
   </error-page>
   ```
 
-##2、路径总结
+## 2、路径总结
 
 - 以“/”开始，加Webapp名称
 - 以“/”开始，不加Webapp名称
@@ -517,7 +517,7 @@ Servlet对象实例化之后，这个Servlet对象被存储到哪里了？
 
     - 修改CATALINA_HOME/conf/server.xml文件
 
-# 十一、Servlet线程安全问题
+# 十、Servlet线程安全问题
 
 1. Servlet是单实例多线程环境下运行的
 2. 什么时候程序存在线程安全问题？

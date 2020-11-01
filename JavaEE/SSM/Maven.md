@@ -321,7 +321,7 @@ Local Repository：本机仓库的目录位置
 
 ---Build Tools---Maven---Runner
 
-VM Options：archetypeCatalog=internal（Maven项目创建时，会联网下载模板文件，比较大，使用此参数配置不用下载，创建Maven项目速度快）
+VM Options：-DarchetypeCatalog=internal（Maven项目创建时，会联网下载模板文件，比较大，使用此参数配置不用下载，创建Maven项目速度快）
 
 JRE：项目的JDK
 
@@ -333,3 +333,37 @@ JRE：项目的JDK
 
 1. maven-archetype-quickstart：普通的Java项目
 2. maven-archetype-webapp：web工程
+
+# 四、依赖范围
+
+使用scope表示的。
+
+scope的值有compile，test，provided，默认是compile
+
+scope：表示依赖使用的范围，也就是在Maven构建项目的哪些阶段中起作用。
+
+Maven构建项目 清理，编译，测试，打包，安装，部署 过程（阶段）
+
+![Snipaste_2020-11-01_18-51-35](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-11-01_18-51-35.png)
+
+# 五、Maven常用操作
+
+## 1、Maven的属性设置
+
+properties：设置Maven的常用属性
+
+## 2、Maven的全局变量
+
+自定义的属性
+
+1. 在\<properties\> 通过自定义标签声明变量（标签名就是变量名）
+2. 在pom.xml文件中的其他位置，使用${标签名}使用变量的值
+
+自定义全局变量一般是定义依赖的版本号，当你的项目中要使用多个相同的版本号，先使用全局变量定义，再使用${变量名}
+
+## 3、资源插件
+
+作用：Mybatis课程中会用到这个作用
+
+1. 默认没有使用resources的时候，Maven执行编译代码时，会把src/main/resources目录中的文件拷贝到target/classes目录中。对于src/main/java目录下的非Java文件不处理，不拷贝到target/classes目录中。
+2. 我们的程序有需要把一些文件放在src/main/java目录中，当我在执行Java程序时，需要用到src/main/java目录中的文件。需要告诉Maven在mvn compile src/main/java目录下的程序时，需要把文件一同拷贝到target/classes目录中。此时就需要在\<build\>中加入\<resources\>

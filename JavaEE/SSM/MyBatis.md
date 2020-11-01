@@ -78,4 +78,55 @@ Object Relation Mapping 对象关系映射。简单地说，就是把数据库�
 
 5. 映射配置文件的操作配置（select），id属性的取值必须是dao接口的方法名
 
-   当我们遵从了3、4、5点之后，我们在开发中就无须再写dao的实现类。
+   当我们遵从了3、4、5点之后，我们在开发中就无须再写dao的实现类，dao接口的实现类转变为一个Mapper配置文件
+
+### 2、MyBatis的入门案例
+
+1. 读取配置文件
+2. 创建SqlSessionFactory工厂
+3. 创建SqlSession
+4. 创建Dao接口的代理对象
+5. 执行dao中的方法
+6. 释放资源
+
+![Snipaste_2020-11-01_15-53-45](D:\JavaHub\学习相关\课堂截图\Snipaste_2020-11-01_15-53-45.png)
+
+**注意事项：**
+
+- 不要忘记在映射配置中告知MyBatis要封装到哪个实体类中，配置的方式：指定实体类的全限定类名
+
+  ```xml
+  com.liruicong.domain.User
+  ```
+
+**可能会遇到的问题：**
+
+- 配置文件没有注册
+- 绑定接口错误
+- 方法名不对
+- 返回类型不对
+- Maven导出资源问题
+
+### 3、MyBatis基于注解的入门案例
+
+把IUserDao.xml移除，在dao接口的方法上使用@Select注解，并且指定SQL语句，同时需要在SqlMapConfig.xml中的mapper配置时，使用class属性指定dao接口的全限定类名
+
+**明确：**我们在实际开发中，都是越简便越好，所以都是采用不写dao实现类的方式。不管使用XML还是注解配置，但是MyBatis它是支持写dao实现类的。
+
+## 六、自定义MyBatis的分析
+
+MyBatis在使用代理dao的方式实现增删改查时做了什么是？
+
+**只有两件事：**
+
+- 创建代理对象
+- 在代理对象中调用selectList
+
+![自定义Mybatis分析](D:\JavaHub\学习相关\课堂截图\自定义Mybatis分析.png)
+
+自定义MyBatis能通过入门案例看到的类
+
+- class Resources
+- class SqlSessionFactoryBuilder
+- interface SqlSessionFactory
+- interface SqlSession

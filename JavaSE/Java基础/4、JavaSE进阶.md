@@ -1021,7 +1021,7 @@ File对象代表文件和目录路径的抽象表示形式,可能对应目录或
 
 ## 一、NIO和IO区别
 
-![image-20200909214406266](D:\JavaHub\学习相关\课堂截图\image-20200909214406266.png)
+![image-20200909214406266](D:\JavaHub\学习相关\Java笔记\pictures\image-20200909214406266.png)
 
 NIO核心：**通道和缓冲区**
 
@@ -1064,7 +1064,7 @@ NIO核心：**通道和缓冲区**
 
 通道：由java.nio.channels包定义，Channel表示IO源与目标打开的连接，Channel类似于传统的“流”。只不过Channel本身不能直接存储和访问数据，Channel只能与Buffer进行交互。
 
-![image-20200910085403536](D:\JavaHub\学习相关\课堂截图\image-20200910085403536.png)
+![image-20200910085403536](D:\JavaHub\学习相关\Java笔记\pictures\image-20200910085403536.png)
 
 通道的主要实现类
 
@@ -1104,7 +1104,7 @@ JDK1.7中的NIO2的Files类提供了工具类的newByteChannel()获取通道
 
 ## 四、阻塞与非阻塞
 
-![image-20200910114959351](D:\JavaHub\学习相关\课堂截图\image-20200910114959351.png)
+![image-20200910114959351](D:\JavaHub\学习相关\Java笔记\pictures\image-20200910114959351.png)
 
 
 

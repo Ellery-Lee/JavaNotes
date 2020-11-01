@@ -2,12 +2,12 @@
 
 JavaScript的封装版，简化JavaScript对DOM对象定位以及对DOM对象属性操作开发步骤
 
-##一、学习重点
+## 一、学习重点
 
 - 熟练背诵JQuery**选择器**和**过滤器**语法
 - 熟练掌握JQuery对象提供的功能函数
 
-##二、JQuery对象和DOM对象区别
+## 二、JQuery对象和DOM对象区别
 
 **DOM对象：**
 
@@ -87,7 +87,7 @@ $("条件1，条件2")
 
 只要DOM对象满足其中的一种条件，就会被定位到数组中
 
-###2、层级选择器
+### 2、层级选择器
 
 【定位条件】可以根据标签之间父子关系定位，可以根据标签之间兄弟关系定位
 
@@ -135,7 +135,7 @@ $("定位当前标签条件").siblings("定位兄弟标签条件")
 
 定位当前标签前面与后面所有满足条件的兄弟标签
 
-###3、INPUT标签选择器
+### 3、INPUT标签选择器
 
 【使用】
 
@@ -151,7 +151,7 @@ $(":checkbox")
 
 定位页面中所有的checkbox关联的DOM
 
-#四、JQuery过滤器
+# 四、JQuery过滤器
 
 过滤器语法介绍：
 
@@ -269,9 +269,9 @@ $("选择器：selected")：留下满足条件的并且处于【选中状态】�
 $("select>option:selected"):下拉列表中选中的option
 ```
 
-#五、JQuery功能函数
+# 五、JQuery功能函数
 
-###1、show() & hide()
+### 1、show() & hide()
 
 show():负责让JQuery对象	包含的所有DOM对象关联的标签在浏览器上显示  style="display:block"
 
@@ -313,7 +313,7 @@ $obj.prop("checked",true):为JQuery对象中所有DOM对象的checked属性值�
 $obj.prop("checked"):读取JQuery对象中第一个DOM对象的【checked属性值】
 ```
 
-####3.attr函数：基本属性 id name title rowspan
+#### 3.attr函数：基本属性 id name title rowspan
 
 ```
 $obj.attr("name", "ck"):为JQuery对象所有DOM对象的【name属性】统一赋值为[ck]
@@ -333,7 +333,7 @@ $(obj.text"123):为JQuery对象中所有DOM对象的innerTEXT属性赋值123
 $obj.text():读取JQUery对象中所有DOM对象的innerTEXT内容，拼接成字符串返回
 ```
 
-#六、JS中事件绑定方式
+# 六、JS中事件绑定方式
 
 ### 1、嵌入式绑定
 
@@ -343,16 +343,16 @@ $obj.text():读取JQUery对象中所有DOM对象的innerTEXT内容，拼接成�
 
 缺点：一次只能为一个标签绑定监听事件
 
-##2、基于DOM对象的绑定方式
+## 2、基于DOM对象的绑定方式
 
 ```
 var array = document.getElementsByName("ck");
 for循环
 ```
 
-#七、JQuery中事件绑定方式
+# 七、JQuery中事件绑定方式
 
-##1、$obj.jquery监听事件函数（处理函数）
+## 1、$obj.jquery监听事件函数（处理函数）
 
 ```
 $(":button").click(fun1);
