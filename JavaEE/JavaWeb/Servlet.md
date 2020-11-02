@@ -2,7 +2,7 @@
 
 # 一、B/S架构角色和协议
 
-![Snipaste_2020-09-25_10-38-21](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-09-25_10-38-21.png)
+![Snipaste_2020-09-25_10-38-21.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-09-25_10-38-21.png?raw=true)
 
 一个WebApp文件夹构成：
 
@@ -143,15 +143,15 @@ Servlet对象实例化之后，这个Servlet对象被存储到哪里了？
 
 - 类图：描述类的信息以及类和类之间的关系
 
-  ![Snipaste_2020-11-01_18-44-43](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-11-01_18-44-43.png)
+  ![Snipaste_2020-11-01_18-44-43.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-11-01_18-44-43.png?raw=true)
 
 - 时序图：描述一个程序的执行过程
 
-  ![Snipaste_2020-11-01_18-46-43](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-11-01_18-46-43.png)
+  ![Snipaste_2020-11-01_18-46-43.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-11-01_18-46-43.png?raw=true)
 
 - 用例图：站在系统用户的角度分析系统中存在哪些功能
 
-  ![Snipaste_2020-11-01_18-46-17](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-11-01_18-46-17.png)
+  ![Snipaste_2020-11-01_18-46-17.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-11-01_18-46-17.png?raw=true)
 
 - 状态图：描述一个对象的生命周期
 

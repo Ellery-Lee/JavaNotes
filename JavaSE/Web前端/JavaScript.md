@@ -1,4 +1,4 @@
-#JavaScript
+# JavaScript
 
 JavaScript是运行在浏览器上的脚本语言，简称js
 
@@ -10,7 +10,7 @@ JSP：JavaServer Pages（隶属于Java语言的，运行在JVM中）
 
 JS：JavaScript（运行在浏览器上）
 
-#一、在HTML中怎么嵌入JS代码
+# 一、在HTML中怎么嵌入JS代码
 
 ## 第一种方式
 
@@ -63,8 +63,7 @@ JS是一种事件驱动型编程语言，依靠事件去驱动，然后执行对
     <!--js代码
         这里写的代码不会执行，但如果这里再写script代码块还是会执行-->
 </script>
-
-#二、JS的变量
+# 二、JS的变量
 
 JavaScript是一种弱类型语言，没有编译阶段，一个变量可以随意赋值，赋什么类型的值都行
 
@@ -98,13 +97,13 @@ alert("c = " + c); //200
 
 **局部变量：**在函数体中声明的变量，包括一个函数的形参都属于局部变量，局部变量的生命周期是：函数开始执行时局部变量的内存空间开辟，函数执行结束之后，局部变量的内存空间释放。局部变量生命周期较短。
 
-#三、JS函数
+# 三、JS函数
 
 JS中的函数等同于java语言中的方法，函数也是一段可以被重复利用的代码片段。函数一般都是可以完成某个特定功能的。
 
 JS中的函数不需要指定返回值类型，返回什么类型都行
 
-##第一种方式
+## 第一种方式
 
 ```javascript
 function 函数名(形参列表){
@@ -126,7 +125,7 @@ function sum(a, b){
 </script>
 ```
 
-##第二种方式
+## 第二种方式
 
 ```javascript
 函数名 = function(形参列表){
@@ -140,7 +139,7 @@ function sum(a, b){
 
 - JS中如果两个函数同名，后声明的会覆盖前面的函数
 
-#四、JS中的数据类型
+# 四、JS中的数据类型
 
 JS中数据类型有：原始类型和引用类型
 
@@ -171,7 +170,7 @@ ES6之后，又基于以上六种类型添加了新类型：symbol
 
 - 在JS中比较字符串用 "==" 完成
 
-##1、Undefined类型
+## 1、Undefined类型
 
 Undefined类型只有一个值，这个值就是Undefined。当一个变量没有手动赋值，系统默认值是undefined，或者也可以给一个变量手动赋值undefined。
 
@@ -184,7 +183,7 @@ Number类型包括：-1 0 1 2 2 3 3 14 100... NaN Infinity
 - parseFloat()函数，可以将字符串自动转换成数字
 - Math.ceil()函数（Math是数学类，数学类当中有一个函数叫ceil()，作用是向上取整）
 
-##3、Boolean类型
+## 3、Boolean类型
 
 - JS中布尔类型永远都只有两个值，true和false
 
@@ -196,11 +195,11 @@ Number类型包括：-1 0 1 2 2 3 3 14 100... NaN Infinity
 
   Boolean函数的作用是将非布尔类型转换成布尔类型，规律：**“有”就是true，“没有”就转换成false**
 
-##4、Null类型
+## 4、Null类型
 
 Null类型只有一个值，null
 
-##5、String类型
+## 5、String类型
 
 - 在JS当中字符串可以使用单引号，也可以使用双引号
 
@@ -224,7 +223,7 @@ Null类型只有一个值，null
 
   **substr和substring区别：**substr(startIndex, length)   substring(startIndex, endIndex)(左闭右开)
 
-##6、Object类型
+## 6、Object类型
 
 Object类型是所有类型的超类。自定义任何类型，默认继承Object
 
@@ -297,7 +296,7 @@ var n1 = new User();
 var sno = n1.getSno();
 ```
 
-##7、null undefined NaN区别
+## 7、null undefined NaN区别
 
 **数据类型不一致：**
 
@@ -317,7 +316,7 @@ var sno = n1.getSno();
 
 ===：全等运算符，既判断值是否相等，有判断数据类型是否相等
 
-#五、JS的常用事件
+# 五、JS的常用事件
 
 - 1、blur失去焦点 
 - 2、focus获得焦点
@@ -351,7 +350,7 @@ var sno = n1.getSno();
   >
   > ​				btnObj.onclick = function(){...}   这个函数没有名字，叫做匿名函数这个匿名函数也是一个回调函数
 
-#六、JS代码执行顺序
+# 六、JS代码执行顺序
 
 ```javascript
 //页面加载的过程中，将a函数注册给了load事件
@@ -365,7 +364,7 @@ window.onload = function(){ //这个回调函数叫做a
 }
 ```
 
-#七、捕捉回车键
+# 七、捕捉回车键
 
 ```js
 window.onload = function(){ //这个回调函数叫做a
@@ -396,7 +395,7 @@ window.onload = function(){ //这个回调函数叫做a
 </a>
 ```
 
-#九、JS控制语句
+# 九、JS控制语句
 
 - if
 - while
@@ -430,7 +429,7 @@ with(u){
 }
 ```
 
-#DOM编程
+# DOM编程
 
 JavaScript包括三大块：
 
@@ -470,7 +469,7 @@ window.onload = function(){
 }
 ```
 
-#二、正则表达式(Regular Expression)
+# 二、正则表达式(Regular Expression)
 
 正则表达式主要用在字符串匹配方面。
 
@@ -509,7 +508,7 @@ $ 匹配字符串的结束
 [^aeiou] 匹配除了aeiou这几个字母以外的任意字符
 ```
 
-##2、简单的正则表达式要会写
+## 2、简单的正则表达式要会写
 
 正则表达式当中的小括号（）优先级较高
 
@@ -521,7 +520,7 @@ $ 匹配字符串的结束
 
 QQ号的正则表达式：^[1-9]\[0-9]{4,}$
 
-##3、怎么创建正则表达式对象，怎么调用正则表达式对象的方法
+## 3、怎么创建正则表达式对象，怎么调用正则表达式对象的方法
 
 第一种：var regExp = /正则表达式/flags;
 
@@ -545,9 +544,9 @@ true：匹配成功
 
 false：匹配失败
 
-##4、表单提交（看视频）
+## 4、表单提交（看视频）
 
-#BOM编程
+# BOM编程
 
 **有哪些方法可以通过浏览器往服务器发请求**
 
@@ -557,7 +556,7 @@ false：匹配失败
 - window.location
 - window.open("url")
 
-#JSON
+# JSON
 
 JavaScript Object Notation，简称JSON。（数据交换格式）
 

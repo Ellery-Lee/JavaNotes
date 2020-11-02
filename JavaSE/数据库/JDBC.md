@@ -16,13 +16,13 @@ Java Database Connectivity（Java语言连接数据库）
 
 因为每一个数据库的底层实现原理不一样。
 
-![image-20200831112403126](D:\JavaHub\学习相关\Java笔记\pictures\image-20200831112403126.png)
+![image-20200831112403126.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/image-20200831112403126.png?raw=true)
 
 
 
 **模拟JDBC实现：**
 
-![image-20200831113512864](D:\JavaHub\学习相关\Java笔记\pictures\image-20200831113512864.png)
+![image-20200831113512864.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/image-20200831113512864.png?raw=true)
 
 ## 一、JDBC开发前准备工作
 
@@ -47,19 +47,19 @@ Java Database Connectivity（Java语言连接数据库）
 
 - 在Project下的Module右键
 
-  ![Snipaste_2020-08-31_13-40-01](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-08-31_13-40-01.png)
+  ![Snipaste_2020-08-31_13-40-01.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-08-31_13-40-01.png?raw=true)
 
 - 选择Java
 
-  ![Snipaste_2020-08-31_13-43-36](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-08-31_13-43-36.png)
+  ![Snipaste_2020-08-31_13-43-36.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-08-31_13-43-36.png?raw=true)
 
 - 找到jar包，点OK
 
-  ![Snipaste_2020-08-31_13-44-24](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-08-31_13-44-24.png)
+  ![Snipaste_2020-08-31_13-44-24.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-08-31_13-44-24.png?raw=true)
 
 - Choose Module(如果project下有多个模块，每个都需要导入)
 
-  ![Snipaste_2020-08-31_13-45-04](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-08-31_13-45-04.png)
+  ![Snipaste_2020-08-31_13-45-04.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-08-31_13-45-04.png?raw=true)
 
 ## 四、使用StatementSQL执行对象（注入问题）
 

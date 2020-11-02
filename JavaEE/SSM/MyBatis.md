@@ -15,7 +15,7 @@
 
 持久层：是和数据库交互的
 
-![Snipaste_2020-10-12_12-22-06](D:\JavaHub\学习相关\课堂截图\Snipaste_2020-10-12_12-22-06.png)
+![Snipaste_2020-10-12_12-22-06.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-10-12_12-22-06.png?raw=true)
 
 ## 三、持久层技术解决方案
 

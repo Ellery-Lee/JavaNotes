@@ -344,7 +344,7 @@ scope：表示依赖使用的范围，也就是在Maven构建项目的哪些阶�
 
 Maven构建项目 清理，编译，测试，打包，安装，部署 过程（阶段）
 
-![Snipaste_2020-11-01_18-51-35](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-11-01_18-51-35.png)
+![Snipaste_2020-11-01_18-51-35.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-11-01_18-51-35.png?raw=true)
 
 # 五、Maven常用操作
 
