@@ -89,7 +89,7 @@ Object Relation Mapping 对象关系映射。简单地说，就是把数据库�
 5. 执行dao中的方法
 6. 释放资源
 
-![Snipaste_2020-11-01_15-53-45](D:\JavaHub\学习相关\课堂截图\Snipaste_2020-11-01_15-53-45.png)
+![Snipaste_2020-11-01_15-53-45.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-11-01_15-53-45.png?raw=true)
 
 **注意事项：**
 
@@ -122,7 +122,7 @@ MyBatis在使用代理dao的方式实现增删改查时做了什么是？
 - 创建代理对象
 - 在代理对象中调用selectList
 
-![自定义Mybatis分析](D:\JavaHub\学习相关\课堂截图\自定义Mybatis分析.png)
+![自定义Mybatis分析.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E8%87%AA%E5%AE%9A%E4%B9%89Mybatis%E5%88%86%E6%9E%90.png?raw=true)
 
 自定义MyBatis能通过入门案例看到的类
 
