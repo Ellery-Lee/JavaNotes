@@ -130,3 +130,29 @@ MyBatis在使用代理dao的方式实现增删改查时做了什么是？
 - class SqlSessionFactoryBuilder
 - interface SqlSessionFactory
 - interface SqlSession
+
+## 七、MyBatis 参数深入
+
+### 1、OGNL表达式
+
+Object Graphic Navigation Language：对象图导航语言
+
+它是通过对象的取值方法来获取数据。在写法上把get给省略了。
+
+比如：我们获取用户的名称
+
+类中的写法：
+
+```java
+user.getUsername();
+```
+
+OGNL表达式写法：
+
+```java
+user.username
+```
+
+MyBatis中为什么能直接写username，而不用user.呢？
+
+因为在parameterType中已经提供了属性所属的类，所以此时不需要写对象名。
