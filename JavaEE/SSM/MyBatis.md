@@ -156,3 +156,42 @@ user.username
 MyBatis中为什么能直接写username，而不用user.呢？
 
 因为在parameterType中已经提供了属性所属的类，所以此时不需要写对象名。
+
+## 八、MyBatis中的连接池以及事务控制（原理了解，应用会用）
+
+### 1、连接池
+
+我们在实际开发中都会使用连接池。因为它可以减少我们获取连接所消耗的时间。
+
+**连接池就是用于存储连接的一个容器。**容器其实就是一个集合对象，该集合必须是线程安全的，不能两个线程拿到同一连接。该集合还必须实现队列的特性：先进先出。
+
+### 2、MyBatis中的连接池
+
+MyBatis连接池提供了3种方式的配置：
+
+- 配置的位置：
+  - 主配置文件SqlMapConfig.xml中的dataSource标签，type属性就是表示采用何种连接池方式。
+- type的取值：
+  - POOLED 采用传统的javax.sql.DataSource规范中的连接池，MyBatis种有针对规范的实现
+  - UNPOOLED 采用传统的获取连接的方式，虽然也实现了javax.sql.DataSource接口，但是并没有使用池的思想。
+  - JNDI 采用服务器提供的JNDI技术实现，来获取DataSource对象，不同的服务器所能拿到的DataSource是不一样的。**注意：**如果不是web或者Maven的war工程，是不能使用的。我们课程中使用的是tomcat服务器，采用的连接池就是dbcp连接池。
+
+### 3、MyBatis中的事务
+
+什么是事务？
+
+事物的四大特性ACID
+
+不考虑隔离性会产生的三个问题
+
+解决办法：四种隔离级别
+
+它是通过sqlSession对象的commit方法和rollback方法实现事务的提交和回滚。
+
+## 九、MyBatis基于XML配置的动态SQL语句使用（会用即可）
+
+- if
+- where
+- foreach
+
+## 十、MyBatis的多表操作（掌握应用）
