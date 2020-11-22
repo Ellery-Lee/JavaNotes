@@ -73,4 +73,148 @@ Spring对Bean的管理细节
 <bean id="accountService" class="com.liruicong.factory.StaticFactory" factory-method="getAccountService"></bean>
 ```
 
+Spring中Bean的作用范围：
+
+![Snipaste_2020-11-22_10-56-38](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-11-22_10-56-38.png)
+
+Spring中Bean对象的生命周期：
+
+```xml
+<!-- Bean对象的生命周期
+    单例对象
+        出生：当容器创建时对象出生
+        活着：只要容器还在，对象一直活着
+        死亡：容器销毁，对象消亡
+        总结：单例对象的生命周期和容器相同
+    多例对象
+        出生：当我们使用对象时spring框架为我们创建
+        活着：对象只要是在使用过程中就一直活着
+        死亡：当对象长时间不用且没有别的对象引用时，由Java垃圾回收器回收
+-->
+```
+
 ## 四、依赖注入(Dependency Injection)
+
+```xml
+<!-- Spring中的依赖注入
+    依赖注入：Dependency Injection
+    IOC的作用：降低程序间的耦合（依赖关系）
+    依赖关系的管理：以后都交给Spring来维护。在当前类需要用到其他类的对象，由Spring为我们提供，我们只需要在配置文件中说明
+    依赖关系的维护：就称之为依赖注入
+    依赖注入：
+        能注入的数据有三类：
+            基本类型和String
+            其他的Bean类型（在配置文件中或者注解配置过的Bean）
+            复杂类型/集合类型
+        注入的方式有三种：
+            第一种：使用构造函数提供
+            第二种：使用set方法提供
+            第三种：使用注解提供
+-->
+
+<!-- 构造函数注入
+    使用的标签：constructor-arg
+    标签出现的位置：bean标签的内部
+    标签中的属性
+        type：用于指定要注入的数据的数据类型，该数据类型也是构造函数中某个或某些参数的类型
+        index：用于指定要注入的数据给构造函数中指定索引位置的参数赋值。参数索引的位置是从0开始
+        name：用于指定给构造函数中指定名称的参数赋值
+        ====================以上三个用于指定给构造函数中哪个参数赋值=======================
+        value：用于提供基本类型和String类型的数据
+        ref：用于指定其他的Bean类型的数据。它指的就是在Spring的IOC核心容器中出现过的bean对象
+
+    优势：在获取Bean对象时，注入数据是必须的操作，否则对象无法创建成功
+    弊端：改变了Bean对象的实例化方式，使我们在创建对象时，如果用不到这些数据，也必须提供
+-->
+<!-- set方法注入  更常用的方式
+        涉及的标签：property
+        出现的位置：bean标签的内部
+        标签的属性
+            name：用于指定注入时所调用的set方法名称
+            value：用于提供基本类型和String类型的数据
+            ref：用于指定其他的Bean类型的数据。它指的就是在Spring的IOC核心容器中出现过的bean对象
+
+        优势：创建对象时没有明确的限制，可以直接使用默认构造函数
+        弊端：如果有某个成员必须有值，则获取对象时有可能set方法没有执行。
+-->
+<!-- 复杂类型的注入/集合类型的注入
+        用于给List结构集合注入的标签：
+        list array set
+        用于给Map结构集合注入的标签：
+        map props
+        结构相同，标签可以互换
+-->
+```
+
+## 五、Spring中IOC的常用注解
+
+```
+/**
+ * 账户的业务层实现类
+ * 曾经XML的配置：
+ * <bean id="accountService" class="com.liruicong.service.impl.AccountServiceImpl"
+ *      scope"" init-method="" destroy-method="">
+ *          <property name="" value="" / ref=""></property>
+ * </bean>
+ * 用于创建对象的：它们的作用就和在xml配置文件中编写一个<bean></bean>标签实现的功能是一样的
+ * @Component:
+ *      作用：用于把当前类对象存入Spring容器中
+ *      属性：
+ *          value：用于指定bean的id。当我们不写时，它的默认值是当前类名，且首字母改小写。
+ * @Controller
+ *      一般用在表现层
+ * @Service
+ *      一般用在业务层
+ * @Repository
+ *      一般用于持久层
+ *      以上三个注解它们的作用和属性与Component是一模一样的。
+ *      他们三个是Spring框架为我们提供明确三层使用的注解，使我们的三层对象更加清晰
+ * 用于注入数据的：它们的作用就和在xml配置文件中的<bean></bean>标签中写一个<property></property>标签的作用是一样的
+ * @Autowired
+ *      作用：自动按照类型注入，只要容器中有唯一的一个bean对象类型和要注入的变量类型匹配，就可以注入成功
+ *          如果IOC容器中没有任何bean类型和要注入的变量类型匹配，则报错。
+ *          如果IOC容器中有多个类型匹配时：
+ *      出现位置：可以是变量上，也可以是方法上
+ *      细节：在使用注解注入时，set方法就不是必须的了。
+ * @Qualifier
+ *      作用：在按照类中注入的基础之上再按照名称注入。它在给类成员注入时不能单独使用。但是在给方法参数注入时可以
+ *      属性：
+ *          value：用于指定注入bean的id
+ * @Resource
+ *      作用：直接按照bean的id注入。它可以独立使用
+ *      属性：
+ *          value：用于指定bean的id
+ *      以上三个注解都只能注入其他bean类型的数据，而基本类型和String类型无法使用上述注解实现
+ *      另外，集合类型的注入只能通过xml来实现s
+ * @Value
+ *      作用：用于注入基本类型和String类型的数据
+ *      属性：
+ *          value：用于指定数据的值。它可以使用spring中的Spel(也就是spring的el表达式)
+ *              Spel的写法：${表达式}
+ * 用于改变作用范围的：它们的作用就和在<bean></bean>标签中使用scope属性实现的功能是一样的
+ * @Scope
+ *      作用：用于指定bean的作用范围
+ *      属性：
+ *          value：指定范围的取值。常用取值：singleton prototype
+ * 和生命周期相关：它们的作用就和在<bean></bean>标签中使用init-method和destroy-method的作用是一样的(了解)
+ * @PreDestroy
+ *      作用：用于指定销毁方法
+ * @PostConstruct
+ *      作用：用于指定初始化方法
+ */
+```
+
+Autowired执行原理：先按照类型自动注入，如果有唯一bean对象就注入成功，如果没有任何bean类型相匹配就报错。如果有多个匹配，再按照变量名称匹配。
+
+![Snipaste_2020-11-22_15-33-55](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-11-22_15-33-55.png)
+
+## 六、案例使用xml方式和注解方式实现单表的CRUD操作
+
+### 持久层技术选择：dbutils
+
+## 七、改造基于注解的IOC案例，使用纯注解的方式实现
+
+### Spring的一些新注解使用
+
+## 八、Spring和Junit整合
+
