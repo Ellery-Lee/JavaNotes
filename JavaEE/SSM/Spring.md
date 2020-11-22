@@ -75,7 +75,7 @@ Spring对Bean的管理细节
 
 Spring中Bean的作用范围：
 
-![Snipaste_2020-11-22_10-56-38](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-11-22_10-56-38.png)
+![Snipaste_2020-11-22_10-56-38.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-11-22_10-56-38.png?raw=true)
 
 Spring中Bean对象的生命周期：
 
@@ -206,7 +206,7 @@ Spring中Bean对象的生命周期：
 
 Autowired执行原理：先按照类型自动注入，如果有唯一bean对象就注入成功，如果没有任何bean类型相匹配就报错。如果有多个匹配，再按照变量名称匹配。
 
-![Snipaste_2020-11-22_15-33-55](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-11-22_15-33-55.png)
+![Snipaste_2020-11-22_15-33-55.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-11-22_15-33-55.png?raw=true)
 
 ## 六、案例使用xml方式和注解方式实现单表的CRUD操作
 
