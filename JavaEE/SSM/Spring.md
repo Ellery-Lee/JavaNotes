@@ -277,3 +277,12 @@ Autowired执行原理：先按照类型自动注入，如果有唯一bean对象�
  */
 ```
 
+## 九、AOP的概念
+
+
+
+## 十、Spring中的AOP相关术语
+
+
+
+## 十一、Spring中基于XML和注解的AOP配置
