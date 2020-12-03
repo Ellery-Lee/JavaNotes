@@ -328,7 +328,7 @@ Autowired执行原理：先按照类型自动注入，如果有唯一bean对象�
 
 - 前置通知，后置通知，异常通知，最终通知，环绕通知
 
-![Snipaste_2020-12-03_08-56-42](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-12-03_08-56-42.png)
+![Snipaste_2020-12-03_08-56-42.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-12-03_08-56-42.png?raw=true)
 
 ```java
 /**
