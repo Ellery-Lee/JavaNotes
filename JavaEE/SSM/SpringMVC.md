@@ -4,7 +4,7 @@
 
 ### 一、服务器端三层框架
 
-![Snipaste_2020-12-06_09-36-27](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-12-06_09-36-27.png)
+![Snipaste_2020-12-06_09-36-27.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-12-06_09-36-27.png?raw=true)
 
 ### 二、MVC设计模型
 
@@ -49,13 +49,13 @@ SpringMVC是一种基于Java的实现MVC设计模型的请求驱动类型的轻�
 -->
 ```
 
-![Snipaste_2020-12-06_14-54-51](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-12-06_14-54-51.png)
+![Snipaste_2020-12-06_14-54-51.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-12-06_14-54-51.png?raw=true)
 
 #### ②、组件介绍
 
 SpringMVC框架基于组件方式执行流程
 
-![Snipaste_2020-12-06_15-06-10](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-12-06_15-06-10.png)
+![Snipaste_2020-12-06_15-06-10.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-12-06_15-06-10.png?raw=true)
 
 在SpringMVC的各个组件中，处理器映射器、处理器适配器、视图解析器称为SpringMVC的三大组件。
 

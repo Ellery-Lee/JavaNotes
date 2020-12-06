@@ -427,7 +427,7 @@ Autowired执行原理：先按照类型自动注入，如果有唯一bean对象�
 
 **对象中的常用方法：**
 
-![Snipaste_2020-12-04_08-21-18](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-12-04_08-21-18.png)
+![Snipaste_2020-12-04_08-21-18.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-12-04_08-21-18.png?raw=true)
 
 
 
