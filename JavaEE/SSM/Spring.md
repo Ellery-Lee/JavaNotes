@@ -416,3 +416,25 @@ Autowired执行原理：先按照类型自动注入，如果有唯一bean对象�
                     * com.liruicong.service.impl.*.*(..)
 -->
 ```
+
+## 十二、Spring中的JdbcTemplate
+
+它是Spring框架中提供的一个对象，是对原始Jdbc API对象的简单封装。Spring框架为我们提供了很多的操作模板类。
+
+**JdbcTemplate的作用：**用于和数据库交互的，实现对表的CRUD操作
+
+**如何创建该对象：**
+
+**对象中的常用方法：**
+
+![Snipaste_2020-12-04_08-21-18](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-12-04_08-21-18.png)
+
+
+
+
+
+## 十三、Spring中的事务控制
+
+### 1、基于XML的
+
+### 2、基于注解的
