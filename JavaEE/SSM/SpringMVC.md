@@ -80,3 +80,110 @@ method：用于指定请求的方式。
 params：用于指定限制请求参数的条件。它支持简单的表达式。要求请求参数的key和value必须和配置的一模一样
 
 headers：用于指定限制请求消息头的条件。
+
+## 2、请求参数的绑定
+
+**请求参数绑定说明：**
+
+1. 绑定机制
+   - 表单提交的数据都是k=v格式的 username=haha&password=123
+   - SpringMVC的参数绑定过程是把表单提交的请求参数，作为控制器中方法的参数进行绑定的
+   - 要求：提交表单的name和参数的名称是相同的
+2. 支持的数据类型
+   - 基本数据类型和字符串类型
+   - 实体类型(JavaBean)
+   - 集合数据类型(List、Map集合等)
+
+**基本数据类型和字符串类型**
+
+1. 提交表单的name和参数的名称是相同的
+2. 区分大小写
+
+**实体类型(JavaBean)**
+
+1. 提交表单的name和JavaBean中的属性名称需要一致
+
+2. 如果一个JavaBean类中包含其他的引用类型，那么表单的name属性需要编写成：对象.属性 
+
+   例如：address.name
+
+**给集合属性数据封装**
+
+1. JSP页面编写方式：list[0].属性
+
+**请求参数中乱码的解决**
+
+1. 在web.xml中配置Spring提供的过滤器类
+
+**自定义类型转换器**
+
+1. 表单提交的任何数据类型全部都是字符串类型，但是后台定义Integer类型，数据也可以封装上，说明Spring框架内部会默认进行数据类型转换
+
+2. 如果想自定义数据类型转换，可以实现Converter的接口
+
+   - 自定义类型转化器
+
+     ```java
+     package com.liruicong.utils;
+     
+     import org.springframework.core.convert.converter.Converter;
+     
+     import java.text.DateFormat;
+     import java.text.ParseException;
+     import java.text.SimpleDateFormat;
+     import java.util.Date;
+     
+     /**
+      * 把字符串转换日期
+      */
+     public class StringToDateConverter implements Converter<String, Date> {
+         /**
+          * String s 传入进来字符串
+          * @param s
+          * @return
+          */
+         @Override
+         public Date convert(String s) {
+             //判断
+             if(s == null){
+                 throw new RuntimeException("请您传入数据");
+             }
+             DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+     
+             try {
+                 //把字符串转换日期
+                 return df.parse(s);
+             } catch (Exception e) {
+                 throw new RuntimeException("数据类型转换出现错误");
+             }
+         }
+     }
+     ```
+
+   - 注册自定义类型转换器，在springmvc.xml配置文件中编写配置
+
+     ```xml
+     <!-- 配置自定义类型转换器 -->
+     <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+         <property name="converters">
+             <set>
+                 <bean class="com.liruicong.utils.StringToDateConverter"></bean>
+             </set>
+         </property>
+     </bean>
+     ```
+
+**在控制器中使用原生的ServletAPI对象**
+
+1. 只需要在控制器的方法参数定义HttpServletRequest和HttpServletResponse对象
+
+## 3、常用注解
+
+- RequestParam
+- RequestBody
+- PathVariable
+- HiddenHttpMethodFilter
+- RequestHeader
+- CookieValue
+- ModelAttribute
+- SessionAttribute
