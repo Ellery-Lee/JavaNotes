@@ -198,4 +198,4 @@ headers：用于指定限制请求消息头的条件。
 
 ## 5、SpringMVC实现文件上传
 
-![Snipaste_2020-12-09_15-04-58](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-12-09_15-04-58.png)
+![Snipaste_2020-12-09_15-04-58.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-12-09_15-04-58.png?raw=true)
