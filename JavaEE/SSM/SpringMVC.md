@@ -187,3 +187,15 @@ headers：用于指定限制请求消息头的条件。
 - CookieValue
 - ModelAttribute
 - SessionAttribute
+
+## 4、响应数据和结果视图
+
+- 响应返回值是String的类型
+- 响应返回值是void的类型
+- 响应返回值是ModelAndView的类型
+- 响应使用forward和redirect进行页面跳转
+- 响应json数据之过滤资源
+
+## 5、SpringMVC实现文件上传
+
+![Snipaste_2020-12-09_15-04-58](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-12-09_15-04-58.png)
