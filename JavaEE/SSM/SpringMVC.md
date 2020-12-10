@@ -199,3 +199,20 @@ headers：用于指定限制请求消息头的条件。
 ## 5、SpringMVC实现文件上传
 
 ![Snipaste_2020-12-09_15-04-58.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-12-09_15-04-58.png?raw=true)
+
+## 6、SpringMVC异常处理
+
+![Snipaste_2020-12-10_14-04-11](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-12-10_14-04-11.png)
+
+## 7、SpringMVC拦截器
+
+**拦截器和过滤器的区别：**
+
+- 过滤器是Servlet规范中的一部分，任何Java Web工程都可以使用
+- 拦截器是SpringMVC框架自己的，只有使用了SpringMVC框架的工程才能用
+- 过滤器在url-pattern中配置了/*之后，可以对所有要访问的资源拦截
+- 拦截器它是只会拦截访问的控制方法，如果访问的是jsp,html,css,image或者js是不会进行拦截的
+
+拦截器也是AOP思想的具体应用。要自定义拦截器，必须实现：HandlerInterceptor接口
+
+![Snipaste_2020-12-10_14-58-06](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-12-10_14-58-06.png)
