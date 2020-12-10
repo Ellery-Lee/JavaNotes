@@ -202,7 +202,7 @@ headers：用于指定限制请求消息头的条件。
 
 ## 6、SpringMVC异常处理
 
-![Snipaste_2020-12-10_14-04-11](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-12-10_14-04-11.png)
+![Snipaste_2020-12-10_14-04-11.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-12-10_14-04-11.png?raw=true)
 
 ## 7、SpringMVC拦截器
 
@@ -215,4 +215,4 @@ headers：用于指定限制请求消息头的条件。
 
 拦截器也是AOP思想的具体应用。要自定义拦截器，必须实现：HandlerInterceptor接口
 
-![Snipaste_2020-12-10_14-58-06](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-12-10_14-58-06.png)
+![Snipaste_2020-12-10_14-58-06.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-12-10_14-58-06.png?raw=true)
