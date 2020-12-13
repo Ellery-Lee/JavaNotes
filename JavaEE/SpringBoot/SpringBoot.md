@@ -18,7 +18,7 @@ Spring再简化：SpringBoot-jar：内嵌Tomcat；微服务架构!
 
 服务越来越多：SpringCloud；
 
-![Snipaste_2020-12-13_09-59-51](D:\JavaHub\学习相关\Java笔记\pictures\Snipaste_2020-12-13_09-59-51.png)
+![Snipaste_2020-12-13_09-59-51.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-12-13_09-59-51.png?raw=true)
 
 
 
