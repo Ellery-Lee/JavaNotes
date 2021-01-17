@@ -148,7 +148,7 @@ Spring中Bean对象的生命周期：
 
 ## 五、Spring中IOC的常用注解
 
-```
+```java
 /**
  * 账户的业务层实现类
  * 曾经XML的配置：
@@ -156,9 +156,15 @@ Spring中Bean对象的生命周期：
  *      scope"" init-method="" destroy-method="">
  *          <property name="" value="" / ref=""></property>
  * </bean>
+ * 用于扫描：
+ * @ComponentScan
+ *		作用：扫描当前类所在的当前包和其子包
+ *		自定义配置项：
+ * 				    @ComponentScan(basePackages = {"com.liruicong.pojo"})
+ *					@ComponentScan(basePackageClasses = {User.class})
  * 用于创建对象的：它们的作用就和在xml配置文件中编写一个<bean></bean>标签实现的功能是一样的
  * @Component:
- *      作用：用于把当前类对象存入Spring容器中
+ *      作用：用于把当前类对象存入SpringIoC容器中
  *      属性：
  *          value：用于指定bean的id。当我们不写时，它的默认值是当前类名，且首字母改小写。
  * @Controller
@@ -173,7 +179,7 @@ Spring中Bean对象的生命周期：
  * @Autowired
  *      作用：自动按照类型注入，只要容器中有唯一的一个bean对象类型和要注入的变量类型匹配，就可以注入成功
  *          如果IOC容器中没有任何bean类型和要注入的变量类型匹配，则报错。
- *          如果IOC容器中有多个类型匹配时：
+ *          如果IOC容器中有多个类型匹配时：会根据其属性名称和Bean的名称进行匹配
  *      出现位置：可以是变量上，也可以是方法上
  *      细节：在使用注解注入时，set方法就不是必须的了。
  * @Qualifier
@@ -207,6 +213,13 @@ Spring中Bean对象的生命周期：
 Autowired执行原理：先按照类型自动注入，如果有唯一bean对象就注入成功，如果没有任何bean类型相匹配就报错。如果有多个匹配，再按照变量名称匹配。
 
 ![Snipaste_2020-11-22_15-33-55.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-11-22_15-33-55.png?raw=true)
+
+### Bean的生命周期
+
+1. Bean定义
+2. Bean的初始化
+3. Bean的生存期
+4. Bean的销毁
 
 ## 六、案例使用xml方式和注解方式实现单表的CRUD操作
 
@@ -246,6 +259,10 @@ Autowired执行原理：先按照类型自动注入，如果有唯一bean对象�
  *      属性：
  *          value：指定文件的名称和路径
  *              关键字：classpath，表示类路径下
+ * @ConfigurationProperties
+ *      作用：读取属性到程序中
+ *      属性：
+ *          value：配置字符串，这个字符串将于pojo的属性名称组成全限定名去配置文件里查找
  *
  */
 ```
