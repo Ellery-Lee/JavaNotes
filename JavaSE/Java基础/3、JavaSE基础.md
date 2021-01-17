@@ -103,7 +103,7 @@ ctrl+c组合键
 
 掌握常用的通用的文本编辑快捷键很重要，可以大大提升开发效率。所以必须熟练掌握，从此刻强迫自己少用鼠标，用组合键快捷键的方式。
 
-![Snipaste_2021-01-17_10-57-01](D:\JavaHub\学习相关\课堂截图\Snipaste_2021-01-17_10-57-01.png)
+![Snipaste_2021-01-17_10-56-58.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2021-01-17_10-56-58.png?raw=true)
 
 ## 5、计算机编程语言发展史
 
