@@ -187,7 +187,7 @@ Java语言只要编写一次，可以做到到处运行
 
 例如：Java程序编写完之后，可以运行在Windows操作系统上，不需要做任何改动可以直接运行在Linux操作系统上，同样也可以运行在Mac OS上面。
 
-![Snipaste_2021-01-17_15-58-07](D:\JavaHub\学习相关\课堂截图\Snipaste_2021-01-17_15-58-07.png)
+![Snipaste_2021-01-17_15-58-05.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2021-01-17_15-58-05.png?raw=true)
 
 **非常经典：JVM屏蔽了操作系统之间的差异。**
 
@@ -246,7 +246,7 @@ Java程序非常重要的两个阶段：
 
 - 运行阶段
 
-![Snipaste_2021-01-17_16-24-04](D:\JavaHub\学习相关\课堂截图\Snipaste_2021-01-17_16-24-04.png)
+![Snipaste_2021-01-17_16-24-03.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2021-01-17_16-24-03.png?raw=true)
 
 注意：Java程序员直接编写的Java代码(普通文本)是无法执行被JVM识别的。Java程序员编写的Java代码这种普通文本必须经过一个编译，将这个普通文本代码编程“字节码”。
 
