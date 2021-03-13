@@ -26,7 +26,7 @@ React：用于构建用户界面的JavaScript库。是一个将数据渲染为HT
 
 ![javaScript.PNG](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/javaScript.PNG?raw=true)
 
-![image-20210207211924299](D:\JavaHub\学习相关\Java笔记\pictures\image-20210207211924299.png)
+![image-20210207211924299.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/image-20210207211924299.png?raw=true)
 
 ## 二、React的基本使用
 
