@@ -24,9 +24,9 @@ React：用于构建用户界面的JavaScript库。是一个将数据渲染为HT
 - 在React Native中可以使用React语法进行**移动端开发**
 - 使用**虚拟DOM**+优秀的**Diffing算法**，尽量减少与真实DOM的交互
 
-![javaScript](D:\JavaHub\学习相关\Java笔记\pictures\javaScript.PNG)
+![javaScript.PNG](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/javaScript.PNG?raw=true)
 
-![image-20210207211924299](C:\Users\86177\AppData\Roaming\Typora\typora-user-images\image-20210207211924299.png)
+![image-20210207211924299](D:\JavaHub\学习相关\Java笔记\pictures\image-20210207211924299.png)
 
 ## 二、React的基本使用
 
