@@ -82,7 +82,7 @@ ReactDOM.render(VDOM,document.getElementById('test'))
 
 ### 1、效果
 
-![JSX效果](D:\JavaHub\学习相关\Java笔记\pictures\JSX效果.png)
+![JSX效果.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/JSX%E6%95%88%E6%9E%9C.png?raw=true)
 
 ### 2、JSX
 
