@@ -1,3 +1,5 @@
+
+
 # [React](https://www.bilibili.com/video/BV1wy4y1D7JT?from=search&seid=8268857936371962336)
 
 # ①、React入门
@@ -562,3 +564,213 @@ ReactDOM.render(<Demo/>, document.getElementById('test'))
 </script>
 ```
 
+**事件处理**
+
+- 1.通过onXxx属性指定事件处理函数(注意大小写)
+  - React使用的是自定义(合成)事件, 而不是使用的原生DOM事件——为了更好的兼容性
+  - React中的事件是通过事件委托方式处理的(委托给组件最外层的元素)——为了更高效
+
+- 2.通过event.target得到发生事件的DOM元素对象——不要过度使用ref
+
+## 四、收集表单数据
+
+
+
+### 1、非受控组件
+
+- 输入类的DOM按照现有输入现用现取
+
+```jsx
+<script type="text/babel"> /*此处一定要写babel*/
+//创建组件
+class Login extends React.Component{
+    handleSubmit = (event) =>{
+        event.preventDefault()//阻止表单提交
+        const {username, password} = this;
+        alert(`你输入的用户名是:${username.value}你输入的密码是:${password.value}`)
+    }
+    render(){
+        return(
+            <form onSubmit={this.handleSubmit}>
+                用户名：<input ref= {c =>this.username = c} type="text" name="username" />
+                密码：<input ref= {c =>this.password = c} type="password" name="password"/>
+                <button>登录</button>
+            </form>
+        )
+    }
+}
+//渲染组件
+ReactDOM.render(<Login/>, document.getElementById('test'))
+</script>
+```
+
+### 2、受控组件
+
+- 输入类的DOM随着输入把内容维护到状态中，等需要用的时候从状态中取出
+
+```jsx
+<script type="text/babel"> /*此处一定要写babel*/
+//创建组件
+class Login extends React.Component{
+    //初始化状态
+    state = {
+        username: '', //用户名
+        password: '' //密码
+    }
+
+    //保存用户名到状态中
+    saveUsername = (event) =>{
+        // console.log(event.target.value);
+        this.setState({username:event.target.value})
+    }
+
+    //保存密码到状态中
+    savePassword = (event) =>{
+        // console.log(event.target.value);
+        this.setState({password:event.target.value})
+    }
+
+    //表单提交的回调
+    handleSubmit = (event) =>{
+        event.preventDefault()//阻止表单提交
+        const {username, password} = this.state;
+        alert(`你输入的用户名是:${username}你输入的密码是:${password}`)
+    }
+    render(){
+        return(
+            <form onSubmit={this.handleSubmit}>
+                用户名：<input onChange= {this.saveUsername} type="text" name="username" />
+                密码：<input onChange= {this.savePassword} type="password" name="password"/>
+                <button>登录</button>
+            </form>
+        )
+    }
+}
+//渲染组件
+ReactDOM.render(<Login/>, document.getElementById('test'))
+</script>
+```
+
+### 3、高阶函数和函数柯里化
+
+**高阶函数**：如果一个函数符合下面两个规范中的任何一个，那该函数就是高阶函数
+
+1、若A函数，接收的参数是一个函数，那么A函数就可以称之为高阶函数
+2、若A函数，调用的返回值依然是一个函数，那么A就可以称之为高阶函数
+
+常见的高阶函数有：Promise、setTimeout、arr.map()等等
+
+**函数的柯里化**：通过函数调用继续返回函数的方式，实现多次接收参数最后统一处理的函数编码形式
+
+**高阶函数_函数柯里化**
+
+```jsx
+<script type="text/babel"> /*此处一定要写babel*/
+//#region
+    /*
+    * 高阶函数：如果一个函数符合下面两个规范中的任何一个，那该函数就是高阶函数
+    *   1、若A函数，接收的参数是一个函数，那么A函数就可以称之为高阶函数
+    *   2、若A函数，调用的返回值依然是一个函数，那么A就可以称之为高阶函数
+    *   常见的高阶函数有：Promise、setTimeout、arr.map()等等
+    * 函数的柯里化：通过函数调用继续返回函数的方式，实现多次接收参数最后统一处理的函数编码形式
+    * */
+//#endregion
+//创建组件
+class Login extends React.Component{
+    //初始化状态
+    state = {
+        username: '', //用户名
+        password: '' //密码
+    }
+
+    //保存用户名到状态中
+    saveFormData = (dataType) =>{
+        return (event)=>{
+            this.setState({[dataType]:event.target.value})
+        }
+    }
+
+    //表单提交的回调
+    handleSubmit = (event) =>{
+        event.preventDefault()//阻止表单提交
+        const {username, password} = this.state;
+        alert(`你输入的用户名是:${username}你输入的密码是:${password}`)
+    }
+    render(){
+        return(
+            <form onSubmit={this.handleSubmit}>
+                {/*这里this.saveFormData('username')结果还是一个函数，作为了onChange的回调函数*/}
+                用户名：<input onChange= {this.saveFormData('username')} type="text" name="username" />
+                密码：<input onChange= {this.saveFormData('password')} type="password" name="password"/>
+                <button>登录</button>
+            </form>
+        )
+    }
+}
+//渲染组件
+ReactDOM.render(<Login/>, document.getElementById('test'))
+</script>
+```
+
+**不用函数柯里化的实现**
+
+```jsx
+<script type="text/babel"> /*此处一定要写babel*/
+//创建组件
+class Login extends React.Component{
+    //初始化状态
+    state = {
+        username: '', //用户名
+        password: '' //密码
+    }
+
+    //保存用户名到状态中
+    saveFormData = (dataType, event) =>{
+        this.setState({[dataType]:event.target.value})
+    }
+
+    //表单提交的回调
+    handleSubmit = (event) =>{
+        event.preventDefault()//阻止表单提交
+        const {username, password} = this.state;
+        alert(`你输入的用户名是:${username}你输入的密码是:${password}`)
+    }
+    render(){
+        return(
+            <form onSubmit={this.handleSubmit}>
+                用户名：<input onChange= {event => this.saveFormData('username', event)} type="text" name="username" />
+                密码：<input onChange= {event => this.saveFormData('password', event)} type="password" name="password"/>
+                <button>登录</button>
+            </form>
+        )
+    }
+}
+//渲染组件
+ReactDOM.render(<Login/>, document.getElementById('test'))
+</script>
+```
+
+## 五、组件的生命周期
+
+- 组件从创建到死亡它会经历一些特定的阶段
+- React组件中包含一系列勾子函数(生命周期回调函数), 会在特定的时刻调用
+- 我们在定义组件时，会在特定的生命周期回调函数中，做特定的工作
+
+### 1、组件的生命周期(旧)
+
+![react生命周期(旧)](D:\JavaHub\学习相关\Java笔记\pictures\react生命周期(旧).png)
+
+- **初始化阶段:** 由ReactDOM.render()触发---初次渲染
+  - constructor()
+  - componentWillMount()
+  - render()
+  - componentDidMount() =====>常用，一般在这个钩子中做一些初始化的事，例如：开启定时器、发送网络请求、订阅消息
+
+- **更新阶段:** 由组件内部this.setSate()或父组件重新render触发
+  - shouldComponentUpdate()
+  - componentWillUpdate()
+  - render()
+  - componentDidUpdate()
+
+- **卸载组件:** 由ReactDOM.unmountComponentAtNode()触发
+  - componentWillUnmount() =====>常用，一般在这个钩子中做一些收尾的事，例如：关闭定时器、取消订阅消息
