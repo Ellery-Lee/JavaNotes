@@ -777,7 +777,7 @@ ReactDOM.render(<Login/>, document.getElementById('test'))
 
 ### 2、组件的生命周期(新)
 
-![react生命周期新](D:\JavaHub\学习相关\Java笔记\pictures\react生命周期新.png)
+![react生命周期新.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%96%B0.png?raw=true)
 
 - **初始化阶段:** 由ReactDOM.render()触发---初次渲染
   - constructor()
