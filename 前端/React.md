@@ -774,3 +774,56 @@ ReactDOM.render(<Login/>, document.getElementById('test'))
 
 - **卸载组件:** 由ReactDOM.unmountComponentAtNode()触发
   - componentWillUnmount() =====>常用，一般在这个钩子中做一些收尾的事，例如：关闭定时器、取消订阅消息
+
+### 2、组件的生命周期(新)
+
+![react生命周期新](D:\JavaHub\学习相关\Java笔记\pictures\react生命周期新.png)
+
+- **初始化阶段:** 由ReactDOM.render()触发---初次渲染
+  - constructor()
+  - **getDerivedStateFromProps()**
+  - render()
+  - componentDidMount()
+
+- **更新阶段:** 由组件内部this.setSate()或父组件重新render触发
+  - **getDerivedStateFromProps()**
+  - houldComponentUpdate()
+  - render()
+  - **getSnapshotBeforeUpdate**
+  - componentDidUpdate()
+
+- **卸载组件:** 由ReactDOM.unmountComponentAtNode()触发
+  - componentWillUnmount()
+
+
+
+**重要的钩子：**
+
+- render：初始化渲染或更新渲染调用
+
+- componentDidMount：开启监听, 发送ajax请求
+
+- componentWillUnmount：做一些收尾工作, 如: 清理定时器
+
+**即将废弃的钩子：**
+
+- componentWillMount
+
+- componentWillReceiveProps
+
+- componentWillUpdate
+
+现在使用会出现警告，下一个大版本需要加上UNSAFE_前缀才能使用，以后可能会被彻底废弃，不建议使用。
+
+### 3、新旧生命周期对比
+
+新生命周期废弃了旧生命周期三个钩子：
+
+- componentWillMount
+- componentWillReceiveProps
+- componentWillUpdate
+
+新增了两个钩子：
+
+- getDerivedStateFromProps
+- getSnapshotBeforeUpdate
