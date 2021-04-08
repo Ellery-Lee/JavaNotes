@@ -830,7 +830,7 @@ ReactDOM.render(<Login/>, document.getElementById('test'))
 
 ## 六、虚拟DOM和DOM Diffing算法
 
-![DOM_Diffing](D:\JavaHub\学习相关\Java笔记\pictures\DOM_Diffing.png)
+![DOM_Diffing.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/DOM_Diffing.png?raw=true)
 
 ```js
 经典面试题:
