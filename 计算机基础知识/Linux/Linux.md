@@ -14,7 +14,7 @@
 
 - Linux主要的发行版本
 
-  ![Linux发行版](D:\JavaHub\学习相关\Java笔记\pictures\Linux发行版.png)
+  ![Linux发行版.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Linux%E5%8F%91%E8%A1%8C%E7%89%88.png?raw=true)
 
 - 目前主要的操作系统有哪些
 
@@ -28,7 +28,7 @@
 - 再安装Linux(CentOS 6.8)
 - 原理示意图
 
-![Windows和VM和CentOS关系图](D:\JavaHub\学习相关\Java笔记\pictures\Windows和VM和CentOS关系图.png)
+![Windows和VM和CentOS关系图.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Windows%E5%92%8CVM%E5%92%8CCentOS%E5%85%B3%E7%B3%BB%E5%9B%BE.png?raw=true)
 
 - 难点：虚拟机的网络连接三种形式的说明
   - 桥连接：Linux可以和其它的系统通信。但是可能造成IP冲突。
