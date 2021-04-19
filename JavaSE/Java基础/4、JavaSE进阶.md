@@ -270,7 +270,20 @@ a == b//false
 c == d//true
 ```
 
-**原因：**java中为了提到程序执行效率，将-128到127之间所有的包装对象提前创建好放在了常量池当中。不需要再new了，直接从常量池取。
+**原因：**java中为了提到程序执行效率，将-128到127之间所有的包装对象提前创建好放在了常量池当中。不需要再new了，直接从常量池取。[比较的时候使用equals](https://www.jianshu.com/p/9cb9c61b0986)  Integer重写了equals方法
+
+```java
+public boolean equals(Object obj) {
+  if (obj instanceof Integer) {
+    return value == ((Integer)obj).intValue();
+  }
+  return false;
+}
+```
+
+首先判断传进来的Object类型是不是Integer类的一个实例，如果不是直接返回false；如果是则判断两者的成员变量value值是不是相等的（Integer类中定义的private final int value），这块又回到了基本类型的比较。
+
+
 
 **常见方法：**
 
