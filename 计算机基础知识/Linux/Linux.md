@@ -20,7 +20,7 @@
 
   windows、Android、车载系统、linux等。
 
-## 2、安装VM和CentOS
+### 2、安装VM和CentOS
 
 学习Linux需要一个环境，我们需要创建一个虚拟机，然后在虚拟机上安装一个CentOS系统来学习。
 
@@ -34,3 +34,121 @@
   - 桥连接：Linux可以和其它的系统通信。但是可能造成IP冲突。
   - NAT(Network Address Translation)模式：Linux可以访问外网，不会造成IP冲突。
   - 主机模式：Linux是一个独立主机，不能访问外网。
+
+### 3、CentOS的终端使用和联网
+
+- 终端的使用，点击鼠标右键，即可选择打卡终端
+
+- 配置网络，可以上网
+
+  点击上面右侧的两个计算机图标，先择启用eth0，即可成功连接到网络，就可以上网。
+
+### 4、VMTools安装
+
+- 可以直接粘贴命令再windows和CentOS系统之间
+
+- 可以设置windows和CentOS的共享文件夹
+
+  ![vmtools示意图](D:\JavaHub\学习相关\Java笔记\pictures\vmtools示意图.png)
+
+安装vmtools的步骤：
+
+- 进入CentOS
+- 点击vm菜单的-》install vmware tools
+- CentOS会出现一个vm的安装包
+- 点击右键解压，得到一个安装文件
+- 进入该vm解压的目录，该文件在/boot/桌面/vmware-tools-distrib/下
+- 安装./vmware-install.pl
+- 全部使用默认设置即可
+- 需要reboot重新启动即可生效
+
+## 二、Linux目录结构
+
+### 1、基本介绍
+
+Linux的文件系统是采用级层式的树状目录结构，在此结构中的最上层是根目录“/”，然后在此目录下再创建其他的目录。**在Linux世界里，一切皆文件。**
+
+![Linux目录结构](D:\JavaHub\学习相关\Java笔记\pictures\Linux目录结构.png)
+
+总结：
+
+- Linux的目录中有且只有一个根目录 /
+- Linux的各个目录存放的内容是规划好，不用乱放文件。
+- Linux是以文件的形式管理我们的设备，因此Linux系统，一切皆为文件。
+- Linux的各个文件目录下存放什么内容，大家必须有一个认识。
+- 学习后，你脑海中应该有一颗Linux目录树
+
+## 三、远程登陆Linux系统
+
+### 1、为什么需要远程登陆Linux
+
+- Linux服务器是开发小组共享的
+- 正式上线的项目是运行在公网的
+- 因此程序员需要远程登录到CentOS进行项目管理或者开发
+- 远程登录客户端有Xshell5，Xftp5，我们学习使用Xshell5和Xftp，其它的远程工具大同小异
+- 画出简单网络拓扑示意图
+
+![为什么需要远程登陆Linux](D:\JavaHub\学习相关\Java笔记\pictures\为什么需要远程登陆Linux.png)
+
+- 如果希望安装好XShell5就可以远程访问Linux系统的话，需要有一个前提，就是Linux启用了sshd服务，该服务会监听22号端口。
+
+### 2、安装Xshell并使用
+
+[官网下载](https://www.netsarang.com/zh/xshell/)，非商业用途免费使用
+
+- 使用Xshell远程连接Linux
+
+![Xshell连接Linux](D:\JavaHub\学习相关\Java笔记\pictures\Xshell连接Linux.png)
+
+Xshell远程登陆到Linux后，就可以使用指令来操作Linux系统
+
+### 3、安装Xftp5并使用
+
+[官网下载](https://www.netsarang.com/zh/xshell/)，非商业用途免费使用
+
+- 使用Xftp连接Linux
+
+![Xftp连接Linux](D:\JavaHub\学习相关\Java笔记\pictures\Xftp连接Linux.png)
+
+- 连接到Linux界面如下
+
+![Xftp连接到linux界面如下](D:\JavaHub\学习相关\Java笔记\pictures\Xftp连接到linux界面如下.png)
+
+## 四、vi和vim编辑器
+
+### 1、基本介绍
+
+所有Linux系统都会内建vi文本编辑器。Vim具有程序编辑的能力，可以看做是Vi的增强版本，可以主动的以字体颜色辨别语法的正确性，方便程序设计。代码补全、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。
+
+### 2、vi和vim的三种常见模式
+
+- 正常模式
+
+  在正常模式下，我们可以使用快捷键
+
+  以vim打开一个档案就直接进入一般模式了(这是默认的模式)。在这个模式中，你可以使用[上下左右]按键来移动光标，你可以使用[删除字符]或[删除整行]来处理档案内容，也可以使用[复制、贴上]来处理你的文件数据。
+
+- 插入/编辑模式
+
+  在此模式下，程序员可以输入内容
+
+  按下i,l,o,O,a,A,r,R等任何一个字母之后才会进入编辑模式，一般来说按i即可
+
+- 命令行模式
+
+  在此模式下，可以提供你相关指令。完成读取、存盘、替换、离开vim、显示行号等的动作。
+
+![vi和vim模式的相互转换](D:\JavaHub\学习相关\Java笔记\pictures\vi和vim模式的相互转换.png)
+
+### 3、vi和vim常用快捷键
+
+- 拷贝当前行 yy，拷贝当前行向下的5行 5yy，并粘贴(p)
+- 删除当前行 dd，删除当前行向下的5行 5dd
+- 在文件中查找某个单词[命令行下 /关键字， 回车 查找，输入n就是查找下一个]
+- 设置文件的行号，取消文件的行号[命令行下 :set nu 和  :set nonu]
+- 编辑 /etc/profile 文件，使用快捷到达文档的最末行[G]和最首行[gg]，注意这些都是在正常模式下执行的。
+- 在一个文件中输入“hello”，然后又撤销这个动作。在正常模式下输入  u
+- 编辑 /etc/profile 文件，并将光标移动到 20行 G
+  - 第一步：显示行号 :set nu
+  - 第二步：输入20这个数
+  - 第三步：输入G
