@@ -49,7 +49,7 @@
 
 - 可以设置windows和CentOS的共享文件夹
 
-  ![vmtools示意图](D:\JavaHub\学习相关\Java笔记\pictures\vmtools示意图.png)
+  ![vmtools示意图.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/vmtools%E7%A4%BA%E6%84%8F%E5%9B%BE.png?raw=true)
 
 安装vmtools的步骤：
 
@@ -68,7 +68,7 @@
 
 Linux的文件系统是采用级层式的树状目录结构，在此结构中的最上层是根目录“/”，然后在此目录下再创建其他的目录。**在Linux世界里，一切皆文件。**
 
-![Linux目录结构](D:\JavaHub\学习相关\Java笔记\pictures\Linux目录结构.png)
+![Linux目录结构.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Linux%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png?raw=true)
 
 总结：
 
@@ -88,7 +88,7 @@ Linux的文件系统是采用级层式的树状目录结构，在此结构中的
 - 远程登录客户端有Xshell5，Xftp5，我们学习使用Xshell5和Xftp，其它的远程工具大同小异
 - 画出简单网络拓扑示意图
 
-![为什么需要远程登陆Linux](D:\JavaHub\学习相关\Java笔记\pictures\为什么需要远程登陆Linux.png)
+![为什么需要远程登陆Linux.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E8%BF%9C%E7%A8%8B%E7%99%BB%E9%99%86Linux.png?raw=true)
 
 - 如果希望安装好XShell5就可以远程访问Linux系统的话，需要有一个前提，就是Linux启用了sshd服务，该服务会监听22号端口。
 
@@ -98,7 +98,7 @@ Linux的文件系统是采用级层式的树状目录结构，在此结构中的
 
 - 使用Xshell远程连接Linux
 
-![Xshell连接Linux](D:\JavaHub\学习相关\Java笔记\pictures\Xshell连接Linux.png)
+![Xshell连接Linux.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Xshell%E8%BF%9E%E6%8E%A5Linux.png?raw=true)
 
 Xshell远程登陆到Linux后，就可以使用指令来操作Linux系统
 
@@ -108,11 +108,11 @@ Xshell远程登陆到Linux后，就可以使用指令来操作Linux系统
 
 - 使用Xftp连接Linux
 
-![Xftp连接Linux](D:\JavaHub\学习相关\Java笔记\pictures\Xftp连接Linux.png)
+![Xftp连接Linux.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Xftp%E8%BF%9E%E6%8E%A5Linux.png?raw=true)
 
 - 连接到Linux界面如下
 
-![Xftp连接到linux界面如下](D:\JavaHub\学习相关\Java笔记\pictures\Xftp连接到linux界面如下.png)
+![Xftp连接到linux界面如下.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Xftp%E8%BF%9E%E6%8E%A5%E5%88%B0linux%E7%95%8C%E9%9D%A2%E5%A6%82%E4%B8%8B.png?raw=true)
 
 ## 四、vi和vim编辑器
 
@@ -138,7 +138,7 @@ Xshell远程登陆到Linux后，就可以使用指令来操作Linux系统
 
   在此模式下，可以提供你相关指令。完成读取、存盘、替换、离开vim、显示行号等的动作。
 
-![vi和vim模式的相互转换](D:\JavaHub\学习相关\Java笔记\pictures\vi和vim模式的相互转换.png)
+![vi和vim模式的相互转换.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/vi%E5%92%8Cvim%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2.png?raw=true)
 
 ### 3、vi和vim常用快捷键
 
