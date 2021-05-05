@@ -188,7 +188,7 @@ Xshell远程登陆到Linux后，就可以使用指令来操作Linux系统
 
 ### 1、基本介绍
 
-![用户管理](D:\JavaHub\学习相关\Java笔记\pictures\用户管理.png)
+![用户管理.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86.png?raw=true)
 
 说明：
 
@@ -221,11 +221,11 @@ Xshell远程登陆到Linux后，就可以使用指令来操作Linux系统
 
 - id 用户名
 
-![查询用户](D:\JavaHub\学习相关\Java笔记\pictures\查询用户.png)
+![查询用户.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E6%9F%A5%E8%AF%A2%E7%94%A8%E6%88%B7.png?raw=true)
 
 - su - 切换用户名
 
-![查询用户](D:\JavaHub\学习相关\Java笔记\pictures\查询用户.png)
+![切换用户.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E5%88%87%E6%8D%A2%E7%94%A8%E6%88%B7.png?raw=true)
 
 细节说明:
 
@@ -244,7 +244,7 @@ Xshell远程登陆到Linux后，就可以使用指令来操作Linux系统
 - 删除组：groupdel 组名
 - 增加用户时直接加上组：useradd -g 用户组 用户名
 
-![查询用户](D:\JavaHub\学习相关\Java笔记\pictures\查询用户.png)
+![查询用户.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E6%9F%A5%E8%AF%A2%E7%94%A8%E6%88%B7.png?raw=true)
 
 - 修改用户组：usermod -g 用户组 用户名
 
@@ -272,7 +272,7 @@ Xshell远程登陆到Linux后，就可以使用指令来操作Linux系统
 
 ### 1、指定运行级别
 
-![Linux系统运行级别](D:\JavaHub\学习相关\Java笔记\pictures\Linux系统运行级别.png)
+![Linux系统运行级别.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB.png?raw=true)
 
 ### 2、切换到指定运行级别的指令
 
@@ -280,7 +280,7 @@ Xshell远程登陆到Linux后，就可以使用指令来操作Linux系统
 
 - init [012356]
 
-![查看运行级别](D:\JavaHub\学习相关\Java笔记\pictures\查看运行级别.png)
+![查看运行级别.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E6%9F%A5%E7%9C%8B%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB.png?raw=true)
 
 **面试题：**如何找回root密码，如果我们不小心忘记了root密码，怎么找回？
 
@@ -334,7 +334,7 @@ Xshell远程登陆到Linux后，就可以使用指令来操作Linux系统
   - 基本语法：rmdir [选项] 要删除的空目录
   - 使用细节：如果需要删除非空目录，需要使用rm -rf 要删除的目录
 
-  ![删除目录](D:\JavaHub\学习相关\Java笔记\pictures\删除目录.png)
+  ![删除目录.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95.png?raw=true)
 
 - touch指令 创建空文件
 
@@ -344,9 +344,7 @@ Xshell远程登陆到Linux后，就可以使用指令来操作Linux系统
 
   - 基本语法：cp [选项] source dest
   - 常用选项：
-    - -r：递归复制整个文件夹
-
-  ![强制覆盖cp](D:\JavaHub\学习相关\Java笔记\pictures\强制覆盖cp.png)
+    - ![强制覆盖cp.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E5%BC%BA%E5%88%B6%E8%A6%86%E7%9B%96cp.png?raw=true)
 
 - rm指令 移除文件或目录
 
@@ -369,7 +367,7 @@ Xshell远程登陆到Linux后，就可以使用指令来操作Linux系统
 
     - -n：显示行号
 
-    ![cat分页](D:\JavaHub\学习相关\Java笔记\pictures\cat分页.png)
+    ![cat分页.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/cat%E5%88%86%E9%A1%B5.png?raw=true)
 
   - 使用细节：cat只能浏览文件，而不能修改文件，为了浏览方便，一般会带上管道命令 | more
 
@@ -377,13 +375,13 @@ Xshell远程登陆到Linux后，就可以使用指令来操作Linux系统
 
   - 基本语法：more 要查看的文件
 
-  ![more指令快捷键](D:\JavaHub\学习相关\Java笔记\pictures\more指令快捷键.png)
+  ![more指令快捷键.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/more%E6%8C%87%E4%BB%A4%E5%BF%AB%E6%8D%B7%E9%94%AE.png?raw=true)
 
 - less指令 用来分屏查看文件内容，它的功能与more指令类似，但是比more指令更加强大，支持各种显示终端。less指令在显示文件内容时，并不是一次将整个文件加载之后才显示，而是根据显示需要加载的内容，对于显示大型文件具有较高的效率。
 
   - 基本语法：less 要查看的文件
 
-  ![less指令快捷键](D:\JavaHub\学习相关\Java笔记\pictures\less指令快捷键.png)
+  ![less指令快捷键.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/less%E6%8C%87%E4%BB%A4%E5%BF%AB%E6%8D%B7%E9%94%AE.png?raw=true)
 
 - \>指令 和 \>>指令：\>输出重定向和\>>追加
 
@@ -441,7 +439,7 @@ Xshell远程登陆到Linux后，就可以使用指令来操作Linux系统
 
   - 基本语法：find [搜索范围] [选项]
 
-  ![find指令选项](D:\JavaHub\学习相关\Java笔记\pictures\find指令选项.png)
+  ![find指令选项.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/find%E6%8C%87%E4%BB%A4%E9%80%89%E9%A1%B9.png?raw=true)
 
 - locate指令：locate指令可以快速定位文件路径。locate指令利用事先建立的系统中所有文件名称及路径的locate数据库实现快速定位给定的文件。
 
@@ -476,7 +474,7 @@ Xshell远程登陆到Linux后，就可以使用指令来操作Linux系统
 
   - 基本语法：tar [选项] XXX.tar.gz 打包的内容 (功能描述：打包目录，压缩后的文件格式 .tar.gz)
 
-    ![tar指令选项](D:\JavaHub\学习相关\Java笔记\pictures\tar指令选项.png)
+    <img src="https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/tar%E6%8C%87%E4%BB%A4%E9%80%89%E9%A1%B9.png?raw=true" alt="tar指令选项.png"  />
 
 ## 八、组管理和权限管理
 
@@ -512,7 +510,7 @@ Xshell远程登陆到Linux后，就可以使用指令来操作Linux系统
 
 ### 5、权限的基本介绍
 
-![权限介绍](D:\JavaHub\学习相关\Java笔记\pictures\权限介绍.png)
+![权限介绍.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E6%9D%83%E9%99%90%E4%BB%8B%E7%BB%8D.png?raw=true)
 
 - rwx作用到文件
   - [r]代表可读：可以读取、查看
