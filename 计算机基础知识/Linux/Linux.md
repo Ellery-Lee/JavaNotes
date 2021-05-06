@@ -559,15 +559,15 @@ crontab 定时任务设置
 
 - crontab [选项]
 
-![crontab指令常用选项](D:\JavaHub\学习相关\Java笔记\pictures\crontab指令常用选项.png)
+![crontab指令常用选项.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/crontab%E6%8C%87%E4%BB%A4%E5%B8%B8%E7%94%A8%E9%80%89%E9%A1%B9.png?raw=true)
 
 
 
-![任务调度参数说明](D:\JavaHub\学习相关\Java笔记\pictures\任务调度参数说明.png)
+![任务调度参数说明.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E.png?raw=true)
 
 
 
-![特殊符号细节说明](D:\JavaHub\学习相关\Java笔记\pictures\特殊符号细节说明.png)
+![特殊符号细节说明.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7%E7%BB%86%E8%8A%82%E8%AF%B4%E6%98%8E.png?raw=true)
 
 ## 十、Linux磁盘分区、挂载
 
@@ -590,7 +590,7 @@ crontab 定时任务设置
 - Linux无论有几个分区，分给哪个目录使用，它归根结底就只有一个根目录，一个独立且唯一的文件结构，Linux中每个分区都是用来组成整个文件系统的一部分。
 - Linux采用了一种叫“载入”的处理方法，它的整个文件系统中包含了一整套的文件和目录，且将一个分区和一个目录联系起来。这时要载入的一个分区将使它的存储空间在一个目录下获得。
 
-![Linux分区原理示意图](D:\JavaHub\学习相关\Java笔记\pictures\Linux分区原理示意图.png)
+![Linux分区原理示意图.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Linux%E5%88%86%E5%8C%BA%E5%8E%9F%E7%90%86%E7%A4%BA%E6%84%8F%E5%9B%BE.png?raw=true)
 
 硬盘说明：
 
@@ -600,7 +600,7 @@ crontab 定时任务设置
 
 ### 3、使用lsblk指令查看当前系统的分区情况
 
-![查看系统分区和挂载情况](D:\JavaHub\学习相关\Java笔记\pictures\查看系统分区和挂载情况.png)
+![查看系统分区和挂载情况.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E5%88%86%E5%8C%BA%E5%92%8C%E6%8C%82%E8%BD%BD%E6%83%85%E5%86%B5.png?raw=true)
 
 ### 4、如何增加一块硬盘
 
@@ -664,7 +664,7 @@ crontab 定时任务设置
 
 ### 1、Linux网络配置原理图(含虚拟机)
 
-![Linux网络环境](D:\JavaHub\学习相关\Java笔记\pictures\Linux网络环境.png)
+![Linux网络环境.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Linux%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83.png?raw=true)
 
 
 
@@ -672,7 +672,7 @@ crontab 定时任务设置
 
 - 第一种：自动获取
 
-![Linux网络自动配置](D:\JavaHub\学习相关\Java笔记\pictures\Linux网络自动配置.png)
+![Linux网络自动配置.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Linux%E7%BD%91%E7%BB%9C%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE.png?raw=true)
 
 缺点: linux 启动后会自动获取 IP,缺点是每次自动获取的 ip 地址可能不一样。这个不适用于做服务器，因为我们的服务器的 ip 需要是固定的。
 
@@ -680,7 +680,7 @@ crontab 定时任务设置
 
   直接修改配置文件来指定IP，并可以连接到外网(程序员推荐)，编辑vi /etc/sysconfig/network-scripts/ifcfg-eth0
 
-  ![Linux网络手动配置](D:\JavaHub\学习相关\Java笔记\pictures\Linux网络手动配置.png)
+  ![Linux网络手动配置.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Linux%E7%BD%91%E7%BB%9C%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AE.png?raw=true)
 
 修改后一定要重启服务
 
