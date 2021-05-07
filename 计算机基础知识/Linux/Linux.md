@@ -705,19 +705,19 @@ ps命令用来查看目前系统中，有哪些正在执行，以及它们执行
 - ps -u：以用户的格式显示进程信息
 - ps -x：显示后台进程运行的参数
 
-![Linux进程信息](D:\JavaHub\学习相关\Java笔记\pictures\Linux进程信息.png)
+![Linux进程信息.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Linux%E8%BF%9B%E7%A8%8B%E4%BF%A1%E6%81%AF.png?raw=true)
 
 ### 3、ps指令详解
 
 - ps -aux | grep xxx, 比如看看有没有sshd服务
 
-![ps指令说明](D:\JavaHub\学习相关\Java笔记\pictures\ps指令说明.png)
+![ps指令说明.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/ps%E6%8C%87%E4%BB%A4%E8%AF%B4%E6%98%8E.png?raw=true)
 
 
 
 - ps -ef | grep xxx 以全格式显示当前所有进程，查看进程的父进程
 
-  ![ps-ef指令详解](D:\JavaHub\学习相关\Java笔记\pictures\ps-ef指令详解.png)
+  ![ps-ef指令详解.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/ps-ef%E6%8C%87%E4%BB%A4%E8%AF%A6%E8%A7%A3.png?raw=true)
 
 ### 4、终止进程kill和killall
 
@@ -753,7 +753,7 @@ service管理指令：
 - service 服务名 start | stop | restart | reload | status
 - 在CentOS7.0后 不再使用service，而是systemctl
 
-![服务管理原理图](D:\JavaHub\学习相关\Java笔记\pictures\服务管理原理图.png)
+![服务管理原理图.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E5%8E%9F%E7%90%86%E5%9B%BE.png?raw=true)
 
 查看服务名：
 
@@ -764,11 +764,11 @@ service管理指令：
 
 - 查看或者修改默认级别： vi/etc/inittab
 
-![Linux运行级别](D:\JavaHub\学习相关\Java笔记\pictures\Linux运行级别.png)
+![Linux运行级别.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Linux%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB.png?raw=true)
 
 ### 7、开机流程说明
 
-![开机流程](D:\JavaHub\学习相关\Java笔记\pictures\开机流程.png)
+![开机流程.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E5%BC%80%E6%9C%BA%E6%B5%81%E7%A8%8B.png?raw=true)
 
 ### 8、chkconfig指令
 
@@ -788,11 +788,11 @@ top与ps命令很相似，它们都用来显示正在执行的进程。Top与ps�
 
 - top [选项]
 
-![top指令选项说明](D:\JavaHub\学习相关\Java笔记\pictures\top指令选项说明.png)
+![top指令选项说明.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/top%E6%8C%87%E4%BB%A4%E9%80%89%E9%A1%B9%E8%AF%B4%E6%98%8E.png?raw=true)
 
 
 
-![top指令交互操作说明](D:\JavaHub\学习相关\Java笔记\pictures\top指令交互操作说明.png)
+![top指令交互操作说明.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/top%E6%8C%87%E4%BB%A4%E4%BA%A4%E4%BA%92%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E.png?raw=true)
 
 ### 10、监控网络状态
 
