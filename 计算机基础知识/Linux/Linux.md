@@ -687,3 +687,122 @@ crontab 定时任务设置
 1) service network restart
 
 2) reboot
+
+## 十二、进程管理
+
+### 1、进程的基本介绍
+
+- 在Linux中，每个执行的程序(代码)都称为一个进程。每一个进程都分配一个ID号
+- 每一个进程，都会对应一个父进程，而这个父进程可以复制多个子进程。例如www服务器。
+- 每个进程都可能以两种方式存在。前台与后台，所谓前台进程就是用户目前的屏幕上可以进行操作的。后台进程则是实际在操作，但由于屏幕上无法看到的进程，通常使用后台方式执行。
+- 一般系统的服务都是以后台进程的方式存在，而且都会常驻在系统中。直到关机才结束。
+
+### 2、显示系统执行的进程
+
+ps命令用来查看目前系统中，有哪些正在执行，以及它们执行的状况。可以不加任何参数
+
+- ps -a：显示当前终端所有进程信息
+- ps -u：以用户的格式显示进程信息
+- ps -x：显示后台进程运行的参数
+
+![Linux进程信息](D:\JavaHub\学习相关\Java笔记\pictures\Linux进程信息.png)
+
+### 3、ps指令详解
+
+- ps -aux | grep xxx, 比如看看有没有sshd服务
+
+![ps指令说明](D:\JavaHub\学习相关\Java笔记\pictures\ps指令说明.png)
+
+
+
+- ps -ef | grep xxx 以全格式显示当前所有进程，查看进程的父进程
+
+  ![ps-ef指令详解](D:\JavaHub\学习相关\Java笔记\pictures\ps-ef指令详解.png)
+
+### 4、终止进程kill和killall
+
+若是某个进程执行一半需要停止时，或是已消了很大的系统资源时，此时可以考虑停止该进程。使用kill命令来完成此项任务。
+
+基本语法：
+
+- kill [选项] 进程号 (功能描述：通过进程号杀死进程)
+- killall 进程名称 (功能描述：通过进程名称杀死进程，也支持通配符，这在系统因负载过大而变得很慢时有用)
+
+常用选项：
+
+-9：表示强迫进程立即停止
+
+### 5、查看进城树pstree
+
+基本语法：
+
+- pstree [选项]，可以更加直观的来看进程信息
+
+常用选项：
+
+-p：显示进程的PID
+
+-u：显示进程的所属用户
+
+### 6、服务(service)管理
+
+服务(service)本质就是进程，但是是运行在后台的，通常都会监听某个端口，等待其他进程的请求，比如(mysql,sshd防火墙等)，因此我们又称为守护进程，是Linux中非常重要的知识点。
+
+service管理指令：
+
+- service 服务名 start | stop | restart | reload | status
+- 在CentOS7.0后 不再使用service，而是systemctl
+
+![服务管理原理图](D:\JavaHub\学习相关\Java笔记\pictures\服务管理原理图.png)
+
+查看服务名：
+
+- 使用setup -> 系统服务就可以看到
+- /etc/init.d/服务名称
+
+服务的运行级别(runlevel):
+
+- 查看或者修改默认级别： vi/etc/inittab
+
+![Linux运行级别](D:\JavaHub\学习相关\Java笔记\pictures\Linux运行级别.png)
+
+### 7、开机流程说明
+
+![开机流程](D:\JavaHub\学习相关\Java笔记\pictures\开机流程.png)
+
+### 8、chkconfig指令
+
+通过chkconfig命令可以给每个服务的各个运行级别设置自启动/关闭
+
+基本语法：
+
+- 查看服务 chkconfig --list | grep xxx
+- chkconfig 服务名 --list
+- chkconfig --level 5 服务名 on/off
+
+### 9、动态监控进程
+
+top与ps命令很相似，它们都用来显示正在执行的进程。Top与ps最大的不同之处，在于top在执行一段时间可以更新正在运行的进程。
+
+基本语法：
+
+- top [选项]
+
+![top指令选项说明](D:\JavaHub\学习相关\Java笔记\pictures\top指令选项说明.png)
+
+
+
+![top指令交互操作说明](D:\JavaHub\学习相关\Java笔记\pictures\top指令交互操作说明.png)
+
+### 10、监控网络状态
+
+查看系统网络情况netstat
+
+基本语法：
+
+- netstat [选项]
+
+选项说明：
+
+- -an 按一定顺序排列输出
+- -p 显示哪个进程在调用
