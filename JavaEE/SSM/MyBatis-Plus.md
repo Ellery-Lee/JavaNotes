@@ -15,7 +15,7 @@ mybatis-plus:
 
 ### ①、自动增长 AUTO INCREMENT
 
-![自动增长策略](D:\JavaHub\学习相关\Java笔记\pictures\自动增长策略.png)
+![自动增长策略.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E8%87%AA%E5%8A%A8%E5%A2%9E%E9%95%BF%E7%AD%96%E7%95%A5.png?raw=true)
 
 要想主键自增需要配置如下主键策略：
 
@@ -46,7 +46,7 @@ mybatis-plus:
 
 排序不方便
 
-![UUID生成策略](D:\JavaHub\学习相关\Java笔记\pictures\UUID生成策略.png)
+![UUID生成策略.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/UUID%E7%94%9F%E6%88%90%E7%AD%96%E7%95%A5.png?raw=true)
 
 ## ③、Redis实现
 
@@ -56,7 +56,7 @@ snowflake是Twitter开源的分布式ID生成算法，结果是一个long型的I
 
 
 
-![主键策略](D:\JavaHub\学习相关\Java笔记\pictures\主键策略.png)
+![主键策略.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E4%B8%BB%E9%94%AE%E7%AD%96%E7%95%A5.png?raw=true)
 
 - AUTO：自动增长
 - **ID_WORKKER：mp自带策略，生成19位值，数字类型使用这种策略**
