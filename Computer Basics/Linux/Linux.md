@@ -688,6 +688,14 @@ crontab 定时任务设置
 
 2) reboot
 
+### 3、防火墙
+
+- systemctl status firewalld 查看防火墙状态
+- systemctl start/stop firewalld 开启/关闭防火墙
+- firewall-cmd --reload 重启防火墙
+- firewall-cmd --list-all 查看开放的端口号
+- firewall-cmd --add-port=80/tcp --permanent 设置开放的端口号
+
 ## 十二、进程管理
 
 ### 1、进程的基本介绍
