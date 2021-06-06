@@ -17,7 +17,24 @@
 
 ![Snipaste_2020-10-12_12-22-06.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-10-12_12-22-06.png?raw=true)
 
+数据持久化
+
+- 持久化就是将程序的数据在持久状态和顺势状态转化的过程
+- 内存：**断电即失**
+- 数据库(JDBC)，io文件持久化
+- 生活：冷藏、罐头
+
+为什么要持久化？
+
+- 有一些对象，不能让他丢掉。
+
+- 内存太贵了
+
 ## 三、持久层技术解决方案
+
+完成持久化工作的代码
+
+层界限十分明显
 
 #### 1、JDBC技术
 
@@ -38,15 +55,50 @@
 - JDBC是规范
 - Spring的JDBCTemplate和Apache的DBUtils都只是工具类
 
+**为什么需要Mybatis？**
+
+- 帮助程序员将数据存入到数据库中
+- 方便
+- 传统的JDBC代码太复杂了。简化、框架、自动化。
+- 不用Mybatis也可以，更容易上手。
+- 优点：
+  - 简单易学
+  - 灵活
+  - sql和代码分离，提高了可维护性
+  - 提供映射标签，支持对象与数据库的orm字段关系映射
+  - 提供对象关系映射标签，支持对象关系组建维护
+  - 提供xml标签，支持编写动态sql
+
 ## 四、MyBatis概述
 
-MyBatis是一个持久层框架，用Java编写的。它封装了JDBC操作的很多细节，使开发者只需要关注sql语句本身，而无需关注注册驱动，创建链接等繁杂过程。它使用了ORM思想，实现了结果集的封装。
+MyBatis是一个**持久层框架**，用Java编写的。它封装了JDBC操作的很多细节，使开发者只需要关注sql语句本身，而无需关注注册驱动，创建链接等繁杂过程。它使用了ORM思想，实现了结果集的封装。Mybatis可以使用简单的XML或注解来配置和映射原生类型、接口和Java的POJO(Plain Old Java Objects, 普通老式Java对象)为数据库中的记录。
 
 #### 1、ORM
 
 Object Relation Mapping 对象关系映射。简单地说，就是把数据库表和实体类的属性对应起来，让我们可以操作实体类就实现操作数据库表。
 
+#### 2、如何获得Mybatis？
+
+- maven仓库
+
+  ```xml
+  <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+  <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>3.5.2</version>
+  </dependency>
+  ```
+
+  
+
+- Github：https://github.com/mybatis/mybatis-3
+
+- 中文文档：https://mybatis.org/mybatis-3/zh/index.html
+
 ## 五、MyBatis入门
+
+思路：搭建环境-->导入Mybatis-->编写代码-->测试！
 
 ### 1、MyBatis环境搭建
 
@@ -54,9 +106,183 @@ Object Relation Mapping 对象关系映射。简单地说，就是把数据库�
 
 第二步：创建实体类和dao接口
 
+```java
+package com.liruicong.pojo;
+
+import java.util.Date;
+
+public class User {
+    private int id;
+    private String username;
+    private Date birthday;
+    private String sex;
+    private String address;
+
+    public User() {
+
+    }
+
+    public User(int id, String username, Date birthday, String sex, String address) {
+        this.id = id;
+        this.username = username;
+        this.birthday = birthday;
+        this.sex = sex;
+        this.address = address;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", birthday=" + birthday +
+                ", sex='" + sex + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
+}
+
+```
+
 第三步：创建MyBatis的主配置文件  SqlMapConfig.xml
 
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- configuration核心配置文件 -->
+<configuration>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatisstudy?serverTimezone=GMT"/>
+                <property name="username" value="root"/>
+                <property name="password" value="Li19980503"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="org/mybatis/example/BlogMapper.xml"/>
+    </mappers>
+</configuration>
+```
+
+编写mybatis工具类
+
+```java
+//sqlSessionFactory --> sqlSession
+public class MybatisUtils {
+    private static SqlSessionFactory sqlSessionFactory;
+    static {
+        try {
+            //使用Mybatis第一步：获取sqlSessionFactory对象
+            String resource = "mybatis-config.xml";
+            InputStream inputStream = Resources.getResourceAsStream(resource);
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //既然有了SqlSessionFactory, 顾名思义，我们就可以从中获得SqlSession的实例了。
+    //SqlSession完全包含了面向数据库执行Sql命令所需的所有方法。
+    public static SqlSession getSqlSession(){
+        return  sqlSessionFactory.openSession();
+    }
+}
+```
+
 第四步：创建映射配置文件   IUserDao.xml
+
+```java
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace:绑定一个对应的Dao/Mapper接口 -->
+<mapper namespace="com.liruicong.dao.UserDao">
+    <select id="selectBlog" resultType="com.liruicong.pojo.User">
+    select * from mybatisstudy.user;
+  </select>
+</mapper>
+```
+
+**测试**
+
+MapperRegistry是什么？
+
+核心配置文件中注册mappers
+
+- junit测试
+
+```java
+public class UserDaoTest {
+    @Test
+    public void test(){
+        //第一步：获得sqlsession对象
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        //执行SQL
+        UserDao userDao = sqlSession.getMapper(UserDao.class);
+        List<User> userList = userDao.getUserList();
+        for(User user : userList){
+            System.out.println(user);
+        }
+        //关闭sqlSession
+        sqlSession.close();
+    }
+}
+```
+
+可能会遇到的问题：
+
+- 配置文件没有注册
+- 绑定接口错误
+- 方法名不对
+- 返回类型不对
+- Maven导出资源
 
 **环境搭建的注意事项：**
 
@@ -64,7 +290,7 @@ Object Relation Mapping 对象关系映射。简单地说，就是把数据库�
 
    在MyBatis中它把持久层的操作接口名称和映射文件也叫做：Mapper
 
-   所以：IUserDao和IUserMapper是一样的
+   所以：**IUserDao和IUserMapper是一样的**
 
 2. 在IDEA创建目录的时候，它和包是不一样的
 
@@ -78,7 +304,7 @@ Object Relation Mapping 对象关系映射。简单地说，就是把数据库�
 
 5. 映射配置文件的操作配置（select），id属性的取值必须是dao接口的方法名
 
-   当我们遵从了3、4、5点之后，我们在开发中就无须再写dao的实现类，dao接口的实现类转变为一个Mapper配置文件
+   **当我们遵从了3、4、5点之后，我们在开发中就无须再写dao的实现类，dao接口的实现类转变为一个Mapper配置文件**
 
 ### 2、MyBatis的入门案例
 
