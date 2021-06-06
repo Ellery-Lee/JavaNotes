@@ -163,7 +163,7 @@ nginx配置文件由三部分组成
 
 - 找到Nginx配置文件，进行反向代理
 
-  ![Nginx端口转发实例2配置](D:\JavaHub\学习相关\Java笔记\pictures\Nginx端口转发实例2配置.png)
+  ![Nginx端口转发实例2配置.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Nginx%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%AE%9E%E4%BE%8B2%E9%85%8D%E7%BD%AE.png?raw=true)
 
 - 开放对外访问的端口号 9001 8080 8081
 

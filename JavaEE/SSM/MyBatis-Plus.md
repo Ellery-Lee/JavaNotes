@@ -181,7 +181,7 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
 
 - 乐观锁：比较当前数据版本和数据库版本是否一样，事务提交后版本号+1
 
-  ![乐观锁说明](D:\JavaHub\学习相关\Java笔记\pictures\乐观锁说明.png)
+  ![乐观锁说明.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E4%B9%90%E8%A7%82%E9%94%81%E8%AF%B4%E6%98%8E.png?raw=true)
 
 乐观锁的具体实现：
 
@@ -327,7 +327,7 @@ SQL性能执行分析，开发环境使用，超过指定时间，停止运行�
 
 ## 9、mp实现复杂条件查询
 
-![Wrapper继承结构](D:\JavaHub\学习相关\Java笔记\pictures\Wrapper继承结构.png)
+![Wrapper继承结构.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Wrapper%E7%BB%A7%E6%89%BF%E7%BB%93%E6%9E%84.png?raw=true)
 
 一般使用**QueryWrapper**构造条件
 
@@ -344,3 +344,5 @@ AbstractLambdaWrapper：lambda语法使用Wrapper统一处理解析lambda获取c
 LambdaQueryWrapper：看名称也能明白就是用于Lambda语法使用的查询Wrapper
 
 LambdaUpdateWrapper：Lambda更新封装Wrapper
+
+- 第一步：创建QueryWrapper对象，调用方法实现各种条件查询
