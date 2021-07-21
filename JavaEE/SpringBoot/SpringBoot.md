@@ -309,6 +309,12 @@ springboot 启动会扫描以下位置的application.properties或者application
 
 我们还可以通过spring.config.location来改变默认的配置文件位置，这种情况，一般是**后期运维**做的多，相同配置，**外部指定的配置文件优先级最高**。
 
+**配置文件加载顺序：**
+
+1. bootstrap.properties/yml
+2. application.properties/yml
+3. application-dev.properties/yml
+
 ### 4、自动配置原理
 
 以**HttpEncodingAutoConfiguration（Http编码自动配置）**为例分析自动配置原理
