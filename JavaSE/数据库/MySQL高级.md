@@ -4,7 +4,7 @@
 
 和其他存储引擎相比，MySQL可以在多种不同场景中应用并发挥良好作用，主要体现在存储引擎的架构上，**插件式的存储引擎架构将查询处理和系统任务及数据的存储提取相分离**。可以根据实际的业务需求选择合适的存储引擎。
 
-![MySQL逻辑架构](D:\JavaHub\学习相关\Java笔记\pictures\MySQL逻辑架构.jpg)
+![MySQL逻辑架构.jpg](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/MySQL%E9%80%BB%E8%BE%91%E6%9E%B6%E6%9E%84.jpg?raw=true)
 
 - 连接层
 - 服务层
@@ -17,7 +17,7 @@
 
 - MyISAM和InnoDB
 
-  ![MyISAM和InnoDB](D:\JavaHub\学习相关\Java笔记\pictures\MyISAM和InnoDB.jpg)
+  ![MyISAM和InnoDB.jpg](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/MyISAM%E5%92%8CInnoDB.jpg?raw=true)
 
 ## 二、索引优化
 
@@ -36,11 +36,11 @@
 
 - 机读
 
-  ![SQL执行顺序](D:\JavaHub\学习相关\Java笔记\pictures\SQL执行顺序.jpg)
+  ![SQL执行顺序.jpg](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/SQL%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F.jpg?raw=true)
 
 #### ②、JOIN
 
-![join图](D:\JavaHub\学习相关\Java笔记\pictures\join图.png)
+![join图.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/join%E5%9B%BE.png?raw=true)
 
 - Inner Join
 
@@ -175,7 +175,7 @@ MySQL官方对索引的定义为：索引(Index)是帮助MySQL高效获取数据
 
   - 复合索引：即一个索引包含多个列
   
-    ![复合索引数据结构](D:\JavaHub\学习相关\Java笔记\pictures\复合索引数据结构.png)
+    ![复合索引数据结构.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E5%A4%8D%E5%90%88%E7%B4%A2%E5%BC%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png?raw=true)
   
     对于联合索引来说只不过比单值索引多了几列，而这些索引列全都出现在索引树上。对于联合索引，存储引擎会首先根据第一个索引列排序，如上图我们可以单看第一个索引列，横着看，如，`1 1 5 12 13`....他是单调递增的；如果第一列相等则再根据第二列排序，依次类推就构成了上图的索引树，上图中的b列都等于1时，则根据c排序，此时c列也相等则按d列排序，如：`1 1 4` ，`1 1 5`，c=4在c=5前面，以及`13 12 4`,`13 16 1`,`13 16 5`就可以说明这种情况。
   
@@ -310,13 +310,13 @@ MySQL中有专门负责优化select语句的优化器模块，主要功能：计
 
 - select_type：查询的类型，主要是用于区别普通查询、联合查询、子查询等的复杂查询
 
-  ![select_type](D:\JavaHub\学习相关\Java笔记\pictures\select_type.png)
+  ![select_type.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/select_type.png?raw=true)
 
 - table：显示这一行的数据是关于哪张表的
 
 - type：
 
-  ![explain_type](D:\JavaHub\学习相关\Java笔记\pictures\explain_type.jpg)
+  ![explain_type.jpg](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/explain_type.jpg?raw=true)
 
   type显示的是访问类型，是较为重要的一个指标，结果值从最好到最坏依次是： 
 
@@ -348,7 +348,7 @@ MySQL中有专门负责优化select语句的优化器模块，主要功能：计
 
   显示索引的哪一列被使用了，如果可能的话，是一个常数。哪些列或常量   被用于查找索引列上的值
 
-  ![explain_ref](D:\JavaHub\学习相关\Java笔记\pictures\explain_ref.png)
+  ![explain_ref.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/explain_ref.png?raw=true)
 
 - rows
 
@@ -390,30 +390,4 @@ MySQL中有专门负责优化select语句的优化器模块，主要功能：计
 - 如果表使用自增主键，那么每次插入新的记录，记录就会顺序添加到当前索引节点的后续位置，当一页写满，就会自动开辟一个新的页(节点)，这样和B+数叶子节点的分裂顺序一致。
 - 如果表使用非自增主键，每次插入的值随机，因此每次插入的记录都是当前索引页的某个中间位置，此时MySQL就需要为了插入新数据而移动旧数据，如果遇到当前索引页写满的情况，就需要把数据移动到其他索引页，这会增加很多开销。
 - 索引字段选取规则：如果定义了主键，那么InnoDB会选择主键作为聚集索引，如果没有显式定义主键，则InnoDB会选择第一个不包含Null值的唯一索引作为主键索引，如果也没有这样的唯一索引，则InnoDB会选择内置6字节长的ROWID作为隐含的聚集索引。
-
-
-
-方案一：
-
-- CS 263
-- CS 264
-- C200
-- EECS 225A
-- EECS 208
-
-方案二：
-
-- CS 263
-- EECS 225A
-- C200
-- CS 264
-- EECS 208
-
-- 电子体温计
-- 布洛芬
-- 感冒清热颗粒
-- 红霉素软膏
-- 蜂胶口腔膜创可贴
-- 健胃消食片
-- 阿莫西林胶囊
 
