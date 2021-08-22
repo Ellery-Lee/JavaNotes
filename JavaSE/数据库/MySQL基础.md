@@ -589,10 +589,10 @@ CREATE TABLE IF NOT EXISTS stuinfo(
 ### 特点
 
 ​	（ACID）
-​	原子性：要么都执行，要么都回滚
-​	一致性：保证数据的状态操作前和操作后保持一致
-​	隔离性：多个事务同时操作相同数据库的同一个数据时，一个事务的执行不受另外一个事务的干扰
-​	持久性：一个事务一旦提交，则数据将持久化到本地，除非其他事务对其进行修改
+​	原子性(Atomicity)：要么都执行，要么都回滚
+​	一致性(Consistent)：保证数据的状态操作前和操作后保持一致
+​	隔离性(Isolation)：多个事务同时操作相同数据库的同一个数据时，一个事务的执行不受另外一个事务的干扰
+​	持久性(Durable)：一个事务一旦提交，则数据将持久化到本地，除非其他事务对其进行修改
 
 相关步骤：
 
@@ -644,7 +644,7 @@ CREATE TABLE IF NOT EXISTS stuinfo(
 如何避免事务的并发问题？
 
 	通过设置事务的隔离级别
-	1、READ UNCOMMITTED
+	1、READ UNCOMMITTED 
 	2、READ COMMITTED 可以避免脏读
 	3、REPEATABLE READ 可以避免脏读、不可重复读和一部分幻读
 	4、SERIALIZABLE可以避免脏读、不可重复读和幻读
