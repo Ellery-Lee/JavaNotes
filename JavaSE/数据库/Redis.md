@@ -57,7 +57,7 @@ NoSQL(NoSQL = Not Only SQL)，意即“不仅仅是SQL”，**泛指非关系型
 
 - 四者对比
 
-  ![NoSQL四大分类对比](/Users/ruicong/Documents/JavaNotes/pictures/NoSQL四大分类对比.png)
+  ![NoSQL四大分类对比.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/NoSQL%E5%9B%9B%E5%A4%A7%E5%88%86%E7%B1%BB%E5%AF%B9%E6%AF%94.png?raw=true)
 
 ### 4、分布式数据库CAP原理
 
@@ -100,7 +100,7 @@ CAP理论就是说在分布式存储系统中，最多只能实现上面的两�
 
 **经典CAP图**
 
-![经典CAP图](/Users/ruicong/Documents/JavaNotes/pictures/经典CAP图.png)
+![经典CAP图.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E7%BB%8F%E5%85%B8CAP%E5%9B%BE.png?raw=true)
 
 CAP理论的核心是：一个分布式系统不可能同时很好的满足一致性，可用性和分区容错性这三个需求，**最多只能同时较好的满足两个**。
 
