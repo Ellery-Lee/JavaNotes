@@ -234,9 +234,9 @@ StringBuffer构造方法会创建一个byte数组，大小为16字节。往Strin
 
 > String创建的字符串不可变，StringBuffer创建的字符串可变。
 >
-> 我看过源代码，String中有byte[]，是被final修饰的，不可变。因为数组一旦创建，长度不可变，并且被final修饰的引用一旦指向某个对象之后，不可再指向其他对象，所以String不可变。
+> 我看过源代码，String中有char[]，是被final修饰的，不可变。因为数组一旦创建，长度不可变，并且被final修饰的引用一旦指向某个对象之后，不可再指向其他对象，所以String不可变。
 >
-> StringBuilder和StringBuffer内部实际上是byte[]数组，这个byte[]数组没有final修饰。初始化容量我记得应该是16，当存满之后会进行扩容，底层会调用数组拷贝的方法，System.arraycopy()，所以这两者适合使用字符串的频繁拼接操作。
+> StringBuilder和StringBuffer内部实际上是char[]数组，这个char[]数组没有final修饰。初始化容量我记得应该是16，当存满之后会进行扩容，底层会调用数组拷贝的方法，System.arraycopy()，所以这两者适合使用字符串的频繁拼接操作。
 
 **字符串不可变是什么意思?**
 
@@ -1161,7 +1161,7 @@ JDK1.7中的NIO2的Files类提供了工具类的newByteChannel()获取通道
 
   > java.lang.Class：代表字节码文件，代表一个类型
   >
-  > java.lang.reflect.Method：代表字节码中的字节码方法
+  > java.lang.reflect.Method：代表字节码中的方法字节码
   >
   > java.lang.reflect.Constructor：代表字节码中的构造方法字节码
   >
@@ -1206,7 +1206,7 @@ Class z = String.class;
 
 ```java
 Class c1 = Class.forName("java.lang.String")
-Object obj = c.newInstance();
+Object obj = c1.newInstance();
 ```
 
 **newInstance()会调用User这个类的无参构造方法，完成对象的创建，必须保证无参构造方法存在**
@@ -1313,7 +1313,7 @@ JDK中自带了3个类加载器
 
 Java中为了保证类加载安全，使用了双亲委派机制。
 
-**优先从启动类加载器加载，这个称为“父”，“父”无法加载到，再从扩展类加载器中加载，这个称为“双亲委派”，如果都加载不到，才会考虑从应用程序类加载器加载，知道加载到为止。**
+**优先从启动类加载器加载，这个称为“父”，“父”无法加载到，再从扩展类加载器中加载，这个称为“双亲委派”，如果都加载不到，才会考虑从应用程序类加载器加载，直到加载到为止。**
 
 
 
