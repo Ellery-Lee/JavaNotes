@@ -1019,4 +1019,4 @@ super：
 
 super内存结构图
 
-![Super关键字内存图](/Users/ruicong/Documents/JavaNotes/pictures/Super关键字内存图.jpg)
+![Super关键字内存图.jpg](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Super%E5%85%B3%E9%94%AE%E5%AD%97%E5%86%85%E5%AD%98%E5%9B%BE.jpg?raw=true)
