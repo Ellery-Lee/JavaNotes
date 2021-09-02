@@ -473,7 +473,7 @@ List集合元素特点：有序可重复，存储的元素有下标。
 
 Set集合元素特点：无序不可重复，存储的元素没有下标。
 
-把集合变成线程安全的：Collections.synchronizedList(collectrion);
+把集合变成线程安全的：Collections.synchronizedList(collectrion);  （Collections是一个工具类，有一系列静态方法，服务于Collection接口）
 
 ### 1、List
 
@@ -1428,6 +1428,16 @@ Class c1 = Class.forName("***/student")
 Class superclass = c1.getSuperClass();//获取父类
 Class[] interfaces = c1.getInterfaces();//获取所有接口
 ```
+
+# 动态代理
+
+## 一、两种方式
+
+JDK动态代理
+
+cglib动态代理
+
+![img](https://pic2.zhimg.com/80/v2-28daefe7c2d1948a070765bf1e71842d_1440w.jpg)
 
 # 注解
 

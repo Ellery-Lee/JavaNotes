@@ -146,6 +146,13 @@ Spring中Bean对象的生命周期：
 -->
 ```
 
+### Bean的循环依赖怎么解决
+
+- Spring是通过递归的方式获取目标bean及其所依赖的bean的；
+- Spring实例化一个bean的时候，是分两步进行的，首先实例化目标bean，然后为其注入属性。
+
+[参考](https://zhuanlan.zhihu.com/p/84267654)
+
 ## 五、Spring中IOC的常用注解
 
 ```java
@@ -216,10 +223,12 @@ Autowired执行原理：先按照类型自动注入，如果有唯一bean对象�
 
 ### Bean的生命周期
 
-1. Bean定义
-2. Bean的初始化
-3. Bean的生存期
+1. Bean的实例化
+2. Bean的属性赋值
+3. Bean的初始化
 4. Bean的销毁
+
+[参考](https://www.jianshu.com/p/1dec08d290c1)https://zhuanlan.zhihu.com/p/84267654)
 
 ## 六、案例使用xml方式和注解方式实现单表的CRUD操作
 

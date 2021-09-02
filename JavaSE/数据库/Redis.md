@@ -177,3 +177,24 @@ Redis 与其他 key - value 缓存产品有以下三个特点：
 | SCAN cursor [MATCH pattern] [COUNT count] | 迭代数据库中的数据库键。                                     |
 | TYPE key                                  | 返回 key 所储存的值的类型。                                  |
 
+## 四、持久化
+
+### redis持久化 aof文件出错怎么办
+
+当发生这种情况时， 可以用以下方法来修复出错的 AOF 文件：
+
+1. 为现有的 AOF 文件创建一个备份。
+2. 使用 Redis 附带的 `redis-check-aof` 程序，对原来的 AOF 文件进行修复。
+
+> ```
+> $ redis-check-aof --fix
+> ```
+
+1. （可选）使用 `diff -u` 对比修复后的 AOF 文件和原始 AOF 文件的备份，查看两个文件之间的不同之处。
+2. 重启 Redis 服务器，等待服务器载入修复后的 AOF 文件，并进行数据恢复。
+
+
+
+**list实现原理、应用场景**
+
+**hash实现原理、应用场景、rehash、渐进式hash**
