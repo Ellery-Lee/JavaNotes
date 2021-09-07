@@ -656,7 +656,63 @@ CREATE TABLE IF NOT EXISTS stuinfo(
 
 	select @@tx_isolation;
 
+### MySQL如何解决脏读、不可重复读
 
+- 多版本并发控制（MVCC）**快照读**
+
+  MVCC即多个版本的数据实现并发控制的技术，基本思想是为每次事务生成一个新版本的数据，在读数据时选择不同版本的数据就可以实现对事务结果的完整性读取。
+
+  update、insert、delete会生成事务id
+
+  - 每条记录都会保存两个隐藏列：trx_id(事务id)和roll_pointer(回滚指针)两个字段
+  - 每次操作都会生成一条undo log日志，回滚指针指向前一条记录
+  - 查询的时候会读取ReadView：未提交的事务id数组+**已提交的最大事务id**，根据readview从undo log日志中最新的记录依次往下找
+
+  **可重复读：只在第一次select获取readview，之后复用上一次select的readview**
+
+  如果当前事务id<未提交的最小id，则可以读
+
+  如果 未提交的最小id < 当前事务id < 未提交的最大id，则不可读(只有自己可读)， 当前事务id <= 已提交事物的最大id，则可读
+
+  如果当前事务id > 已提交事务的最大id，则不可读
+
+  **读已提交：每次select都会创建使用最新的readview**
+
+  从最新事物记录开始找到事务id为已提交事务的最大id为止
+
+  
+
+  ![MVCC原理](/Users/ruicong/Documents/JavaNotes/pictures/MVCC原理.png)
+
+- **当前读**
+
+  MVCC 其它会对数据库进行修改的操作（INSERT、UPDATE、DELETE）需要进行加锁操作，从而读取最新的数据。可以看到 MVCC 并不是完全不用加锁，而只是避免了 SELECT 的加锁操作。
+
+  在进行 SELECT 操作时，可以强制指定进行加锁操作。以下第一个语句需要加 S 锁，第二个需要加 X 锁。
+
+  ```sql
+  SELECT * FROM table WHERE ? lock in share mode;
+  SELECT * FROM table WHERE ? for update;
+  ```
+
+  **在RR级别下，快照读是通过MVVC(多版本控制)和undo log来实现的，当前读是通过加record lock(记录锁)和gap lock(间隙锁)来实现的。**
+
+### MySQL如何解决幻读
+
+MVCC + next-key锁
+
+**快照读的幻读是用MVCC解决的，当前的读的幻读是用间隙锁解决的。**
+
+- next-key锁
+
+  next-key 锁包含两部分：
+
+  - 记录锁（行锁）
+  - 间隙锁
+
+  原理：将当前数据行与上一条数据和下一条数据之间的间隙锁定，保证此范围内读取的数据是一致的。
+
+[参考](https://www.cnblogs.com/xuwc/p/13873293.html)
 
 # 九、视图
 

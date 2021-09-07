@@ -177,6 +177,10 @@ Redis 与其他 key - value 缓存产品有以下三个特点：
 | SCAN cursor [MATCH pattern] [COUNT count] | 迭代数据库中的数据库键。                                     |
 | TYPE key                                  | 返回 key 所储存的值的类型。                                  |
 
+Key和Value最大值512M
+
+集合最多存储元素个数 2^32^ - 1
+
 ## 四、持久化
 
 ### redis持久化 aof文件出错怎么办
@@ -193,7 +197,24 @@ Redis 与其他 key - value 缓存产品有以下三个特点：
 1. （可选）使用 `diff -u` 对比修复后的 AOF 文件和原始 AOF 文件的备份，查看两个文件之间的不同之处。
 2. 重启 Redis 服务器，等待服务器载入修复后的 AOF 文件，并进行数据恢复。
 
+## 五、IO模型
 
+redis基于Reactor模式开发了自己的文件事件处理器，`file event handler`，这个文件事件处理器是单线程的，所以 redis 才叫做单线程的模型。它采用 IO 多路复用机制同时监听多个 socket，根据 socket 上的事件来选择对应的事件处理器进行处理。
+
+文件事件处理器的结构包含 4 个部分：
+
+- 多个socket
+- IO多路复用程序
+- 文件事件分派器
+- 事件处理器
+
+多个 socket 可能会并发产生不同的操作，每个操作对应不同的文件事件，但是 IO 多路复用程序会监听多个 socket，会将 socket 产生的事件放入队列中排队，事件分派器每次从队列中取出一个事件，把该事件交给对应的事件处理器进行处理。
+
+**Reactor-IO模型**
+
+Reactor模式**首先是事件驱动的，有一个或多个并发输入源，有一个Service Handler，有多个Request Handlers**；Service Handler会对输入的请求（Event）进行多路复用，并同步地将它们分发给相应的Request Handler。
+
+![img](https://pic3.zhimg.com/80/v2-cfd7ed4a76c7b1df386bc4bd9576faca_720w.jpg)
 
 **list实现原理、应用场景**
 
