@@ -1315,6 +1315,14 @@ Java中为了保证类加载安全，使用了双亲委派机制。
 
 **优先从启动类加载器加载，这个称为“父”，“父”无法加载到，再从扩展类加载器中加载，这个称为“双亲委派”，如果都加载不到，才会考虑从应用程序类加载器加载，直到加载到为止。**
 
+### 5、同一包下不同版本类加载怎么解决？
+
+- **自定义 ClassLoader，使其 Parent = null，避免其使用系统自带的 ClassLoader 加载 Class。**
+- 在调用相应版本的方法前，更改当前线程的 ContextClassLoader，避免扩展包的依赖包通过`Thread.currentThread().getContextClassLoader()`获取到非自定义的 ClassLoader 进行类加载
+- 通过反射获取 Method 时，如果参数为自定义的类型，一定要使用自定义的 ClassLoader 加载参数获取 Class，然后在获取 Method，同时参数也必须转化为使用自定义的 ClassLoade 加载的类型（不同 ClassLoader 加载的同一个类不相等）
+
+
+
 
 
 ## 四、反射属性Field
