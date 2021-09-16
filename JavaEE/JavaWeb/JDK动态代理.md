@@ -110,7 +110,7 @@ a---访问b---访问c
 
 动态代理的实现有两种：
 
-1. JDK动态代理（理解）：使用Java反射包中的类和接口实现动态代理的功能。反射包Java.lang.reflect，里面有三个类：InvocationHandler, Method, Proxy
+1. JDK动态代理（理解）：使用**反射机制**，Java反射包中的类和接口实现动态代理的功能。反射包Java.lang.reflect，里面有三个类：InvocationHandler, Method, Proxy
 
 2. CGLIB动态代理（了解）：cglib是第三方的工具库，创建代理对象。cglib的原理是继承，cglib通过继承目标类，创建它的子类，在子类中重写父类中同名的方法，实现功能的修改。
 

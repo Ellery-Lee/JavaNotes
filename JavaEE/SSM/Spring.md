@@ -73,10 +73,6 @@ Spring对Bean的管理细节
 <bean id="accountService" class="com.liruicong.factory.StaticFactory" factory-method="getAccountService"></bean>
 ```
 
-Spring中Bean的作用范围：
-
-![Snipaste_2020-11-22_10-56-38.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-11-22_10-56-38.png?raw=true)
-
 Spring中Bean对象的生命周期：
 
 ```xml
@@ -220,6 +216,10 @@ Spring中Bean对象的生命周期：
 Autowired执行原理：先按照类型自动注入，如果有唯一bean对象就注入成功，如果没有任何bean类型相匹配就报错。如果有多个匹配，再按照变量名称匹配。
 
 ![Snipaste_2020-11-22_15-33-55.png](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/Snipaste_2020-11-22_15-33-55.png?raw=true)
+
+### Bean的作用范围
+
+![img](https://img-blog.csdn.net/20160417164310654?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
 
 ### Bean的生命周期
 
