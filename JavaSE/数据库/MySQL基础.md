@@ -714,6 +714,14 @@ MVCC + next-key锁
 
 [参考](https://www.cnblogs.com/xuwc/p/13873293.html)
 
+### 如何实现事物？
+
+隔离性：MVCC+undo log
+
+持久性：redo log
+
+原子性：undo log
+
 # 九、视图
 
 含义：理解成一张虚拟的表
