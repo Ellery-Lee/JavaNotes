@@ -335,7 +335,7 @@ Reactor模式**首先是事件驱动的，有一个或多个并发输入源，�
 - 读写分离，性能扩展
 - 容灾快速恢复
 
-![主从复制](/Users/ruicong/Desktop/主从复制.jpg)
+![主从复制.jpg](https://github.com/Ellery-Lee/JavaNotes/blob/master/pictures/%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6.jpg?raw=true)
 
 - 从服务器挂掉后，重启后变成了主服务器。
 
