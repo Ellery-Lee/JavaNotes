@@ -722,6 +722,15 @@ MVCC + next-key锁
 
 原子性：undo log
 
+一致性：由其他三个特性保证
+
+1. Innodb在收到一个update语句后，会先根据条件找到数据所在的页，并将该页缓存在buffer pool中
+2. 执行update语句，修改buffer pool中的数据，也就是内存中的数据
+3. 针对update语句生成一个redolog对象，存入logbuffer中
+4. 针对update语句生成undolog日志，用于事务回滚
+5. 如果事务提交，则把redolog对象持久化，后续还有其他机制将buffer pool中所修改的数据页持久化到磁盘中
+6. 如果事务回滚，则利用undolog日志进行回滚
+
 # 九、视图
 
 含义：理解成一张虚拟的表
