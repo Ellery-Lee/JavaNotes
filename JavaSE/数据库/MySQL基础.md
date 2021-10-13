@@ -724,12 +724,19 @@ MVCC + next-key锁
 
 一致性：由其他三个特性保证
 
+
+
+### SQL语句执行过程
+
 1. Innodb在收到一个update语句后，会先根据条件找到数据所在的页，并将该页缓存在buffer pool中
-2. 执行update语句，修改buffer pool中的数据，也就是内存中的数据
-3. 针对update语句生成一个redolog对象，存入logbuffer中
-4. 针对update语句生成undolog日志，用于事务回滚
-5. 如果事务提交，则把redolog对象持久化，后续还有其他机制将buffer pool中所修改的数据页持久化到磁盘中
-6. 如果事务回滚，则利用undolog日志进行回滚
+2. 修改前的记录写入undo log
+3. 执行update语句，修改buffer pool中的数据，也就是内存中的数据
+4. 针对update语句生成一个redolog对象，存入logbuffer中，log(prepare状态)
+5. 针对update语句生成binlog日志，用于数据恢复
+6. 如果事务提交，则redolog设为commit状态，把redolog对象持久化，后续还有其他机制将buffer pool中所修改的数据页持久化到磁盘中
+7. 如果事务回滚，则利用undolog日志进行回滚
+
+![img](https://img2020.cnblogs.com/blog/2012006/202012/2012006-20201203220840727-213780904.png)
 
 # 九、视图
 
